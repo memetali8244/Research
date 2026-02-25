@@ -1,400 +1,309 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Advanced Functional Materials Research Group — Semiconductors, thin films, optical characterization, nanoindentation, and cellulose-based functional composites." />
-  <title>Advanced Functional Materials Research Group</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functional Materials Research Group</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a2a44;
+            --accent-blue: #2c3e50;
+            --light-bg: #f4f7f6;
+            --text-color: #333;
+            --white: #ffffff;
+        }
 
-  <style>
-    :root{
-      --bg:#0b1020;
-      --card:#111a33;
-      --text:#e8ecff;
-      --muted:#a9b3d6;
-      --line:rgba(232,236,255,.12);
-      --accent:#7aa7ff;
-      --accent2:#7affc9;
-      --shadow:0 12px 34px rgba(0,0,0,.38);
-      --radius:18px;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica;
-      color:var(--text);
-      background:
-        radial-gradient(1000px 550px at 12% 12%, rgba(122,167,255,.18), transparent 60%),
-        radial-gradient(900px 520px at 72% 12%, rgba(122,255,201,.12), transparent 60%),
-        radial-gradient(900px 520px at 60% 92%, rgba(122,167,255,.10), transparent 60%),
-        var(--bg);
-      line-height:1.55;
-    }
-    a{color:inherit; text-decoration:none}
-    a:hover{opacity:.92}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 70px}
-    .card{
-      border:1px solid var(--line);
-      background:rgba(17,26,51,.62);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    /* NAV */
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px;
-      padding:10px 12px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(17,26,51,.55);
-      backdrop-filter: blur(10px);
-      position:sticky; top:14px; z-index:10;
-    }
-    .brand{display:flex; align-items:center; gap:10px; padding-left:6px}
-    .dot{
-      width:12px; height:12px; border-radius:50%;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow:0 0 0 6px rgba(122,167,255,.10);
-    }
-    .brand b{font-weight:900; letter-spacing:.2px}
-    .links{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end}
-    .links a{
-      font-size:14px; color:var(--muted);
-      padding:8px 10px; border-radius:999px;
-      border:1px solid transparent;
-    }
-    .links a:hover{border-color:var(--line); color:var(--text); background:rgba(255,255,255,.04)}
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
 
-    /* HERO */
-    .hero{margin-top:18px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    @media (max-width: 960px){ .hero-grid{grid-template-columns:1fr} }
+        /* Navigation */
+        nav {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    .hero-main{overflow:hidden; position:relative}
-    .hero-img{
-      height:300px;
-      border-bottom:1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(11,16,32,.25), rgba(11,16,32,.88)),
-        url("https://images.unsplash.com/photo-1582719478185-2b7c1f9b0a4a?auto=format&fit=crop&w=1800&q=60");
-      background-size:cover;
-      background-position:center;
-    }
-    /* Not: Bu görsel sadece yer tutucu. İsterseniz kendi SEM/TEM görselinizi yükleyip linkini koyarız. */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
 
-    .hero-content{padding:18px 20px 20px}
-    h1{
-      margin:0 0 8px;
-      font-size:40px; line-height:1.12;
-      letter-spacing:-.6px;
-    }
-    @media (max-width: 520px){ h1{font-size:32px} }
-    .subtitle{color:var(--muted); font-size:16px; margin:0 0 14px}
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 6px}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px; border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      font-weight:800; font-size:14px;
-    }
-    .btn.primary{
-      border-color:transparent;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#071022;
-    }
-    .btn svg{width:16px; height:16px}
-    .pills{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .pill{
-      font-size:12.5px; color:var(--text);
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      padding:7px 10px; border-radius:999px;
-    }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
 
-    /* SIDE CARD */
-    .side{padding:16px}
-    .kpi{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    .kpi .box{
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:rgba(255,255,255,.03);
-      padding:14px;
-      min-height:86px;
-    }
-    .kpi .num{font-size:20px; font-weight:900}
-    .kpi .lab{color:var(--muted); font-size:12.5px; margin-top:4px}
-    .note{
-      margin-top:12px;
-      border:1px dashed var(--line);
-      border-radius:16px;
-      padding:12px 14px;
-      color:var(--muted);
-      font-size:13.5px;
-      background:rgba(0,0,0,.12);
-    }
-    .badge-row{margin-top:12px; display:flex; gap:10px; flex-wrap:wrap}
-    .badge{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 10px; border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--muted);
-      font-size:13px;
-    }
-    .badge a{color:var(--text); text-decoration:underline}
-    .badge a:hover{opacity:.9}
+        .nav-links li {
+            margin-left: 20px;
+        }
 
-    /* SECTIONS */
-    section{padding:18px 2px 0}
-    .section-head{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
-      margin:14px 0 10px;
-    }
-    h2{margin:0; font-size:22px; letter-spacing:-.2px}
-    .hint{color:var(--muted); font-size:13.5px}
-    .grid-3{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
-    @media (max-width: 960px){ .grid-3{grid-template-columns:1fr} }
-    .tile{padding:16px}
-    .tile h3{margin:2px 0 6px; font-size:16px}
-    .tile p{margin:0; color:var(--muted); font-size:13.5px}
-    .icon{
-      width:36px; height:36px; border-radius:12px;
-      display:grid; place-items:center;
-      background:rgba(122,167,255,.12);
-      border:1px solid rgba(122,167,255,.18);
-      margin-bottom:10px;
-    }
-    .mini-link{display:inline-block; margin-top:10px; color:var(--text); text-decoration:underline; font-size:13.5px}
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
 
-    /* NEWS */
-    .news-item b{display:block; margin-bottom:4px}
-    .news-item .meta{color:var(--muted); font-size:12.5px}
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
 
-    /* FOOTER */
-    footer{
-      margin-top:26px;
-      padding:18px 8px 0;
-      color:var(--muted);
-      font-size:13px;
-      border-top:1px solid var(--line);
-    }
-  </style>
+        /* Hero Section */
+        .hero {
+            height: 500px;
+            background: linear-gradient(rgba(26, 42, 68, 0.7), rgba(26, 42, 68, 0.7)), 
+                        url('https://images.unsplash.com/photo-1532187875460-12d059c16299?auto=format&fit=crop&w=1500&q=80'); /* SEM görseli temsilidir */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--white);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Main Content Grid */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+        }
+
+        /* News Section */
+        .news-sidebar {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .news-sidebar h2 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .news-item h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .news-item p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Research Areas */
+        .research-areas h2 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .area-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .area-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .area-card-content {
+            padding: 15px;
+        }
+
+        .area-card-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--accent-blue);
+        }
+
+        .area-card-content p {
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 40px 5% 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="wrap">
 
-    <!-- NAV -->
-    <div class="nav">
-      <div class="brand">
-        <div class="dot"></div>
-        <b>Advanced Functional Materials Research Group</b>
-      </div>
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="#research-areas">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="#" title="We can create team.html later">Team</a>
-        <a href="#" title="We can create projects.html later">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
+    <nav>
+        <div class="logo">AFM Group</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Research</a></li>
+            <li><a href="#">Publications</a></li>
+            <li><a href="#">Members</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- HERO -->
-    <div class="hero">
-      <div class="hero-grid">
+    <header class="hero">
+        <h1>Advanced Functional Materials Research Group</h1>
+        <p>Pioneering the Future of Smart Materials and Nanotechnology</p>
+    </header>
 
-        <div class="card hero-main">
-          <div class="hero-img"></div>
-          <div class="hero-content">
-            <h1>Advanced Functional Materials Research Group</h1>
-            <p class="subtitle">
-              We investigate <b>semiconductors</b>, <b>thin films</b>, and <b>cellulose-based functional composites</b>,
-              combining <b>optical characterization</b> and <b>nano-/micro-mechanical analysis</b> to understand
-              structure–property relationships.
-            </p>
-
-            <div class="cta">
-              <a class="btn primary" href="publications.html">
-                View Publications
-                <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </a>
-              <a class="btn" href="#contact">
-                Contact
-                <svg viewBox="0 0 24 24" fill="none"><path d="M4 8l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 8v10h16V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </a>
+    <main class="container">
+        <aside class="news-sidebar">
+            <h2>Latest News</h2>
+            <div class="news-item">
+                <h4>New Publication in Journal of Alloys and Compounds</h4>
+                <p>Our study on the thermal properties of Gd2O3 nanoparticles has been published.</p>
             </div>
-
-            <div class="pills">
-              <span class="pill">Semiconductor crystals</span>
-              <span class="pill">Thin films</span>
-              <span class="pill">Optical spectroscopy</span>
-              <span class="pill">Nanoindentation</span>
-              <span class="pill">Cellulose composites</span>
-              <span class="pill">Interfaces & coatings</span>
+            <div class="news-item">
+                <h4>Grant Awarded</h4>
+                <p>The group received a TÜBİTAK grant for AlSi10Mg nanomechanical characterization.</p>
             </div>
-          </div>
-        </div>
-
-        <div class="card side">
-          <div class="kpi">
-            <div class="box">
-              <div class="num">170+</div>
-              <div class="lab">Publications</div>
+            <div class="news-item">
+                <h4>Open Position</h4>
+                <p>We are looking for motivated PhD students to work on biosensor applications.</p>
             </div>
-            <div class="box">
-              <div class="num">[X]</div>
-              <div class="lab">Active projects</div>
+        </aside>
+
+        <section class="research-areas">
+            <h2>Research Areas</h2>
+            <div class="research-grid">
+                <div class="area-card">
+                    <img src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=500&q=60" alt="Nanomechanical">
+                    <div class="area-card-content">
+                        <h3>Nanomechanical Characterization</h3>
+                        <p>Analysis of creep, hardness, and elastic modulus at the nanoscale using nanoindentation techniques.</p>
+                    </div>
+                </div>
+                <div class="area-card">
+                    <img src="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=500&q=60" alt="Thin Films">
+                    <div class="area-card-content">
+                        <h3>Semiconductor Thin Films</h3>
+                        <p>Investigating the optical and structural properties of III-VI semiconductors and thin film materials.</p>
+                    </div>
+                </div>
+                <div class="area-card">
+                    <img src="https://images.unsplash.com/photo-1564182842519-8a3b2af3e228?auto=format&fit=crop&w=500&q=60" alt="Composites">
+                    <div class="area-card-content">
+                        <h3>Functional Composites</h3>
+                        <p>Development of cellulose nanofibril (CNF) based composites for next-generation biosensors.</p>
+                    </div>
+                </div>
+                <div class="area-card">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=500&q=60" alt="Biomedical">
+                    <div class="area-card-content">
+                        <h3>Biomedical Applications</h3>
+                        <p>Applying advanced materials to enhance biocompatibility and sensor sensitivity in medical devices.</p>
+                    </div>
+                </div>
             </div>
-            <div class="box">
-              <div class="num">[Y]</div>
-              <div class="lab">Students</div>
-            </div>
-            <div class="box">
-              <div class="num">[Z]</div>
-              <div class="lab">Collaborations</div>
-            </div>
-          </div>
-
-          <div class="note">
-            <b>Affiliation:</b> [Department], [University], [City, Country]<br/>
-            <b>PI:</b> Prof. Mehmet Isik • <b>Email:</b> [yourmail@university.edu]
-          </div>
-
-          <div class="badge-row">
-            <span class="badge">Scholar: <a href="https://scholar.google.com.tr/citations?user=z9IdgAYAAAAJ&hl=tr" target="_blank" rel="noopener">link</a></span>
-            <span class="badge">ORCID: <a href="[ORCID_LINK]" target="_blank" rel="noopener">link</a></span>
-            <span class="badge">University: <a href="[UNIVERSITY_PROFILE_LINK]" target="_blank" rel="noopener">profile</a></span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- LATEST NEWS -->
-    <section id="news">
-      <div class="section-head">
-        <h2>Latest News</h2>
-        <div class="hint">You said you will keep this updated ✅</div>
-      </div>
-
-      <div class="grid-3">
-        <div class="card tile news-item">
-          <div class="icon">📝</div>
-          <b>[Paper] New publication</b>
-          <div class="meta">[Month Year] • Journal name</div>
-          <p>Short one-sentence summary. Add DOI or a link.</p>
-          <a class="mini-link" href="[PAPER_LINK]">Read →</a>
-        </div>
-
-        <div class="card tile news-item">
-          <div class="icon">✅</div>
-          <b>[Project] Accepted / funded</b>
-          <div class="meta">[Month Year] • TÜBİTAK / COST / BAP</div>
-          <p>Short summary: scope + your role (PI/Co-PI).</p>
-          <a class="mini-link" href="[PROJECT_LINK]">Details →</a>
-        </div>
-
-        <div class="card tile news-item">
-          <div class="icon">🎤</div>
-          <b>[Event] Talk / collaboration</b>
-          <div class="meta">[Month Year] • Institution / Conference</div>
-          <p>One sentence: invited talk, new collaboration, etc.</p>
-          <a class="mini-link" href="[EVENT_LINK]">More →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESEARCH AREAS -->
-    <section id="research-areas">
-      <div class="section-head">
-        <h2>Research Areas</h2>
-        <div class="hint">Short & clear on the homepage (details can go to a Research page later)</div>
-      </div>
-
-      <div class="grid-3">
-        <div class="card tile">
-          <div class="icon">🔷</div>
-          <h3>Semiconductor materials</h3>
-          <p>Crystal growth and characterization of functional semiconductors (layered chalcogenides and oxide crystals).</p>
-          <a class="mini-link" href="#">Read more →</a>
-        </div>
-
-        <div class="card tile">
-          <div class="icon">🧪</div>
-          <h3>Thin films & optoelectronics</h3>
-          <p>Thin-film fabrication and device-oriented stacks for sensing and optoelectronic applications.</p>
-          <a class="mini-link" href="#">Read more →</a>
-        </div>
-
-        <div class="card tile">
-          <div class="icon">🔬</div>
-          <h3>Optical characterization</h3>
-          <p>Ellipsometry, Raman/PL, UV–Vis transmission/reflectance, dielectric function and optical constants.</p>
-          <a class="mini-link" href="#">Read more →</a>
-        </div>
-
-        <div class="card tile">
-          <div class="icon">🧱</div>
-          <h3>Nano-/micro-mechanics</h3>
-          <p>Nanoindentation mapping, hardness/modulus, load dependence, and structure–mechanics correlations.</p>
-          <a class="mini-link" href="#">Read more →</a>
-        </div>
-
-        <div class="card tile">
-          <div class="icon">🧩</div>
-          <h3>Functional composites</h3>
-          <p>Hybrid composites integrating rigid functional phases in polymeric/bio-based matrices.</p>
-          <a class="mini-link" href="#">Read more →</a>
-        </div>
-
-        <div class="card tile">
-          <div class="icon">🌿</div>
-          <h3>Cellulose-based materials</h3>
-          <p>Cellulose nanofiber (CNF) structures and coatings for sustainable, functional material platforms.</p>
-          <a class="mini-link" href="#">Read more →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT / QUICK LINKS -->
-    <section id="contact">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <div class="hint">Replace placeholders</div>
-      </div>
-
-      <div class="card tile">
-        <p style="margin:0;color:var(--muted);font-size:14px;">
-          <b style="color:var(--text);">Email:</b> [yourmail@university.edu] &nbsp; • &nbsp;
-          <b style="color:var(--text);">Address:</b> [Department], [University], [City, Country]
-        </p>
-        <p style="margin:10px 0 0;color:var(--muted);font-size:14px;">
-          <b style="color:var(--text);">Google Scholar:</b>
-          <a href="https://scholar.google.com.tr/citations?user=z9IdgAYAAAAJ&hl=tr" target="_blank" rel="noopener" style="text-decoration:underline;">Open</a>
-          &nbsp; • &nbsp;
-          <b style="color:var(--text);">ORCID:</b>
-          <a href="[ORCID_LINK]" target="_blank" rel="noopener" style="text-decoration:underline;">Open</a>
-        </p>
-      </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-      © <span id="y"></span> Advanced Functional Materials Research Group • Built with GitHub Pages
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Advanced Functional Materials Group</strong></p>
+                <p>Physics Department, University of Technology</p>
+                <p>Email: contact@afm-group.org</p>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-researchgate"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <center><p>&copy; 2026 AFM Research Group. All rights reserved.</p></center>
     </footer>
 
-  </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
