@@ -216,6 +216,33 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* Makale Haberi İçin Özel Stil */
+.news-item.publication {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.news-item img {
+    width: 70px; /* Küçük resim boyutu */
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.read-more-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.read-more-link:hover {
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
@@ -240,10 +267,17 @@
     <main class="container">
         <aside class="news-sidebar">
             <h2>Latest News</h2>
-            <div class="news-item">
-                <h4>New Publication in Journal of Alloys and Compounds</h4>
-                <p>Our study on the thermal properties of Gd2O3 nanoparticles has been published.</p>
-            </div>
+            <div class="news-item publication">
+    <img src="https://via.placeholder.com/70" alt="Article Thumbnail"> 
+    
+    <div class="news-text">
+        <h4>New Publication in Journal of Luminescence</h4>
+        <p>Our study on the thermal properties of Gd2O3 nanoparticles has been published.</p>
+        <a href="https://www.sciencedirect.com/science/article/pii/S0022231326000712" target="_blank" class="read-more-link">
+            View Article <i class="fas fa-external-link-alt"></i>
+        </a>
+    </div>
+</div>
             <div class="news-item">
                 <h4>Grant Awarded</h4>
                 <p>The group received a TÜBİTAK grant for AlSi10Mg nanomechanical characterization.</p>
