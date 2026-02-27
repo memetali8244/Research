@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications | ISIK SFM Research Group</title>
+    <title>Publications | AFM Research Group</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --primary-blue: #1a2a44; --light-bg: #f8f9fa; --accent: #3498db; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; color: #333; }
+        :root { --primary-blue: #1a2a44; --light-bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; color: #333; background: #fff; }
         
-        /* Navigation */
         nav { background: var(--primary-blue); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
         .logo { color: white; font-weight: bold; text-decoration: none; font-size: 1.2rem; }
         .nav-links { list-style: none; display: flex; margin: 0; }
@@ -17,29 +16,27 @@
         .nav-links a { color: white; text-decoration: none; font-size: 0.9rem; }
 
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        h1 { color: var(--primary-blue); border-bottom: 4px solid var(--primary-blue); padding-bottom: 10px; }
+        h1 { color: var(--primary-blue); border-bottom: 4px solid var(--primary-blue); padding-bottom: 10px; margin-bottom: 30px; }
 
-        /* Yıl Navigasyonu */
-        .year-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 30px 0; position: sticky; top: 70px; background: white; padding: 10px 0; z-index: 99; border-bottom: 1px solid #eee; }
-        .year-nav a { text-decoration: none; color: var(--primary-blue); border: 1px solid var(--primary-blue); padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; transition: 0.3s; }
+        .year-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; position: sticky; top: 70px; background: white; padding: 15px 0; z-index: 99; border-bottom: 1px solid #eee; }
+        .year-nav a { text-decoration: none; color: var(--primary-blue); border: 1px solid var(--primary-blue); padding: 5px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
         .year-nav a:hover { background: var(--primary-blue); color: white; }
 
-        /* Yayın Listesi Tasarımı */
-        .year-section { margin-bottom: 40px; scroll-margin-top: 130px; }
-        .year-title { background: var(--light-bg); padding: 10px 20px; border-left: 5px solid var(--primary-blue); font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 20px; }
-        .pub-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; text-align: justify; }
-        .authors { font-weight: 500; }
-        .title { font-style: italic; color: #000; }
-        .journal { color: #666; font-weight: bold; }
-        sub { font-size: 0.75em; }
+        .year-section { margin-bottom: 50px; scroll-margin-top: 140px; }
+        .year-title { background: var(--light-bg); padding: 10px 20px; border-left: 6px solid var(--primary-blue); font-size: 1.6rem; color: var(--primary-blue); margin-bottom: 20px; }
+        .pub-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; text-align: justify; text-justify: inter-word; }
+        .authors { font-weight: 500; color: #555; }
+        .title { font-style: italic; color: #000; font-weight: 500; }
+        .journal { color: var(--primary-blue); font-weight: 600; }
+        sub { font-size: 0.75em; line-height: 0; position: relative; vertical-align: baseline; bottom: -0.25em; }
 
-        footer { background: var(--primary-blue); color: white; text-align: center; padding: 20px; margin-top: 50px; }
+        footer { background: var(--primary-blue); color: white; text-align: center; padding: 25px; margin-top: 60px; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="logo">ISIK SFM Research Group</a>
+        <a href="index.html" class="logo">AFM Group</a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="publications.html">Publications</a></li>
@@ -50,264 +47,46 @@
 
     <div class="container">
         <h1>Full List of Publications</h1>
-        
         <div id="year-nav-container" class="year-nav"></div>
-
         <div id="publications-container"></div>
     </div>
 
-    <footer><p>&copy; 2026 AFM Research Group</p></footer>
+    <footer><p>&copy; 2026 Advanced Functional Materials Research Group</p></footer>
 
     <script>
-        // Bibtex.txt dosyanızdan alınan verilerin bir kısmı (180 makaleyi buraya ekleyebilirsiniz)
+        // BibTeX dosyanızdan otomatik olarak çekilen veri tabanı
         const publicationsData = [
-  { year: 2026, authors: "Mecit, Giray, Isik, M, Altuntas, G, Karatay, AHMET, Gasanly, NM, Darvishov, NH",  title: "Growth and optical characterization of PbMo0. 5W0. 5O4 single crystals for UV optoelectronic applications", journal: "Physica Scripta, 101(2), 025904, 2026" },
-  { year: 2026, authors: "Isik, M, Yildirim, T, T\\\"uzemen, S",  title: "As-rich GaAs Crystals: Temperature-Dependent Photoluminescence and Defect-Mediated Emission", journal: "Journal of Luminescence, 121783, 2026" },
-  { year: 2026, authors: "Balayeva, Lamiya, Guseinov, Ali, Akhmedova, Fidan, Isik, Mehmet",  title: "Effect of Low-Concentration Boron Incorporation on the Structural Coherence and Phonon Modes of Layered GaSe", journal: "Micro and Nanostructures, 208604, 2026" },
-  { year: 2026, authors: "Hilal, Omer, Emur, H Gulce, Dogan, Anil, et al.",  title: "Nonlinear Optical and Optical Limiting Properties of In2S3 Chalcogenide Thin Films: Influence of Defect States and Deposition Technique", journal: "Journal of Luminescence, 121804, 2026" },
-  { year: 2025, authors: "Isik, M, Gasanly, NM",  title: "Nanoindentation study of PbMoO4 single crystals: mechanical properties and implications for applications", journal: "Physica Scripta, 100(1), 015916, 2025" },
-  { year: 2025, authors: "Isik, M, Altuntas, G, Gasanly, NM, Darvishov, NH",  title: "NaBi (MoO4) 2 crystal: Defect states and luminescence properties for optoelectronic applications", journal: "Materials Letters, 383, 137990, 2025" },
-  { year: 2025, authors: "Isik, Mehmet, Altuntas, Gozde, Gasanly, Nizami M",  title: "Electronic and optical insights into NaBi (WO4) 2: a promising candidate for optoelectronic applications", journal: "Journal of Electronic Materials, 54(5), 4101--4105, 2025" },
-  { year: 2025, authors: "Isik, M, Altuntas, G, Gasanly, NM",  title: "Exploring the thermal properties of gallium sulfide (GaS) for high-temperature applications", journal: "Applied Physics A, 131(6), 414, 2025" },
-  { year: 2025, authors: "Isik, Mehmet, Altuntas, Gozde, Gasanly, Nizami",  title: "Nanomechanical Properties and Application Potential of PbWO4 Crystals: Mechanical Behavior and Characterization", journal: "Metallurgical and Materials Transactions A, 56(7), 2506--2512, 2025" },
-  { year: 2025, authors: "Isik, M, Yildirim, T, Gasanly, NM",  title: "Thermoluminescence Behavior of Yttrium-Doped ZnO Nanoparticles Synthesized by Sol--Gel Method", journal: "Luminescence, 40(5), e70199, 2025" },
-  { year: 2025, authors: "Altuntas, Gozde, Isik, Mehmet, Surucu, Gokhan, Parlak, Mehmet, Surucu, Ozge",  title: "Exploring the thermal stability of Sb2Se3 for potential applications through advanced thermal analysis methods", journal: "ACS omega, 10(22), 22585--22592, 2025" },
-  { year: 2025, authors: "Isik, M, Altuntas, G, Gasanly, NM",  title: "Thermal performance of Bi12TiO20 crystals: insights into stability and decomposition kinetics", journal: "Physica Scripta, 100(7), 075946, 2025" },
-  { year: 2025, authors: "Altuntas, Gozde, Isik, Mehmet, Gasanly, Nizami Mamed",  title: "Structural, Crystallographic, and Thermal Properties of Bi12GeO20 for Technological Applications", journal: "ACS omega, 10(24), 25219--25227, 2025" },
-  { year: 2025, authors: "Isik, Mehmet, Gasanly, Nizami M",  title: "Comprehensive ellipsometric analysis of linear and nonlinear optical properties of GaAs for optoelectronic and communication applications", journal: "Journal of Materials Science, 60(27), 11435--11445, 2025" },
-  { year: 2025, authors: "Isik, M, Surucu, O, Bektas, T, Parlak, Mehmet",  title: "Cu doping of Sb2Se3 thin films via thermal evaporation: Tailoring structural and optical properties for enhanced photovoltaic performance", journal: "Optical Materials, 117362, 2025" },
-  { year: 2025, authors: "Khiera, Kefif, Hijri, Mokhtar, Radja, Imane, et al.",  title: "Dual-Functional Cu⁺/Cu$^2$⁺-Doped SnS Thin Films via Spray Coating: Optoelectronic Tuning and Superior Humidity Sensor Performance", journal: "Journal of Alloys and Compounds, 183081, 2025" },
-  { year: 2025, authors: "Isik, Mehmet, Gasanly, Nizami",  title: "Spectroscopic Ellipsometry-Based Linear and Nonlinear Optical Characterization of GaSe Crystals for Optoelectronic Applications", journal: "Journal of Electronic Materials, 54(10), 9151--9159, 2025" },
-  { year: 2025, authors: "Isik, M, Gasanly, NM",  title: "Comprehensive optical characterization of InSe layered crystals: linear and nonlinear response via spectroscopic ellipsometry", journal: "Applied Physics A, 131(10), 820, 2025" },
-  { year: 2025, authors: "Isik, M, Yildirim, T, Gasanly, NM",  title: "Tailoring the structural and optical properties of Mg-doped ZnO Thin films via sol-gel spin coating for ultraviolet optoelectronics", journal: "Physica Scripta, 100(11), 115955, 2025" },
-  { year: 2025, authors: "Isik, M, Gasanly, NM",  title: "Ellipsometric study of TlInS2 chalcogenide crystals: exploring their potential in nonlinear optics and optoelectronics", journal: "Semiconductor Science and Technology, 40(12), 125002, 2025" },
-  { year: 2025, authors: "Isik, M, Hasanl\\i, N\\izam\\i",  title: "Nanoindentation study of PbMoO4 crystals: mechanical properties and implications for applications", journal: "2025" },
-  { year: 2024, authors: "Guler, I, Isik, M, Gasanly, N",  title: "Growth and optical properties of (Na0. 5Bi0. 5)(Mo1- xWx) O4 (x= 0.25) single crystal: a potential candidate for optoelectronic devices", journal: "Optical and Quantum Electronics, 56(1), 17, 2024" },
-  { year: 2024, authors: "Isik, M, Guler, I, Gasanly, NM",  title: "Characterization of linear and nonlinear optical properties of NaBi (WO4) 2 crystal by spectroscopic ellipsometry", journal: "Optical Materials, 148, 114959, 2024" },
-  { year: 2024, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Temperature-dependent tuning of band gap of Fe3O4 nanoparticles for optoelectronic applications", journal: "Chemical Physics Letters, 840, 141139, 2024" },
-  { year: 2024, authors: "Isik, M, Gasanly, NM",  title: "Revealing defect centers in PbWO4 single crystals using thermally stimulated current measurements", journal: "Journal of Applied Physics, 135(8), 2024" },
-  { year: 2024, authors: "Ech-Chergui, Abdelkader Nebatti, Bennabi, Farid, Isik, Mehmet, et al.",  title: "Bifunctional praseodymium-doped SnS2 thin films for photocatalytic and antibacterial applications", journal: "Colloids and Surfaces A: Physicochemical and Engineering Aspects, 686, 133362, 2024" },
-  { year: 2024, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Thermally controlled band gap tuning in CuO nano thin films for optoelectronic applications: S Delice et al.", journal: "Indian Journal of Physics, 98(12), 4155--4160, 2024" },
-  { year: 2024, authors: "Do\\ugan, An\\il, Karatay, Ahmet, Isik, Mehmet, Yildiz, Elif Akhuseyin, Gasanly, Nizami, Elmali, Ayhan",  title: "Revealing photoluminescence and nonlinear optical absorption characteristics of PbMo0. 75W0. 25O4 single crystal for optical limiting applications", journal: "Physica Scripta, 99(5), 055546, 2024" },
-  { year: 2024, authors: "Isik, M, Yildirim, T, Guner, M, Gasanly, NM",  title: "Thermoluminescence dose response and kinetic parameters of Gd-doped ZnO nanoparticles", journal: "Physica Scripta, 99(7), 075947, 2024" },
-  { year: 2024, authors: "Surucu, O, Surucu, G, Gasanly, NM, Parlak, Mehmet, Isik, M",  title: "Exploring Temperature-Dependent bandgap and Urbach energies in CdTe thin films for optoelectronic applications", journal: "Materials Letters, 373, 137078, 2024" },
-  { year: 2024, authors: "Guler, I, Isik, M, Gasanly, NM",  title: "Optical characterization of NaBi (MoO4) 2 crystal by spectroscopic ellipsometry", journal: "Applied Physics A, 130(9), 625, 2024" },
-  { year: 2024, authors: "Doğan, An\\il, Karatay, Ahmet, Isik, Mehmet, Y\\ild\\iz, Elif Akhuseyin, Gasanly, Nizami Mamed, Elmali, Ayhan",  title: "Revealing the effects of defect states on the nonlinear absorption properties of the TlInsse and Tl2In2S3Se crystals in near-infrared optical limiting applications", journal: "Crystal Growth & Design, 24(17), 6981--6990, 2024" },
-  { year: 2024, authors: "Isik, M, Gasanly, NM",  title: "Unveiling the application potential of PbMo0. 75W0. 25O4 crystal: linear and nonlinear optical properties through ellipsometry", journal: "Physica B: Condensed Matter, 694, 416457, 2024" },
-  { year: 2024, authors: "Isik, M, Gasanly, NM",  title: "Identification of shallow trap centers in InSe single crystals and investigation of their distribution: A thermally stimulated current spectroscopy", journal: "Optical Materials, 156, 116011, 2024" },
-  { year: 2024, authors: "Radja, Imane, Khane, Yasmina, Oliveira, Marisa C, et al.",  title: "SnS2 and Ho-doped SnS2 thin films: Synergistic, DFT, photocatalytic, and antibacterial studies", journal: "Ceramics International, 50(20), 37868--37879, 2024" },
-  { year: 2024, authors: "Altuntas, G, Isik, M, Gasanly, NM",  title: "Characterization of Bi12SiO20 single crystal: understanding structural and thermal properties", journal: "Applied Physics A, 130(10), 735, 2024" },
-  { year: 2024, authors: "Isik, M, Guler, I, Gasanly, NM, Darvishov, NH",  title: "Spectroscopic ellipsometry study of linear and nonlinear optical properties of NaBi (Mo0. 5W0. 5O4) 2 crystal", journal: "Journal of Materials Science: Materials in Electronics, 35(28), 1862, 2024" },
-  { year: 2024, authors: "Isik, Mehmet, Gasanly, Nizami Mamed",  title: "Characterization of PbMo0. 3W0. 7O4 crystal: a potential material for photocatalysis and optoelectronic applications", journal: "Crystal Research and Technology, 59(12), 2400189, 2024" },
-  { year: 2023, authors: "Isik, M, Gasanly, NM",  title: "Linear and nonlinear optical properties of Bi12GeO20 single crystal for optoelectronic applications", journal: "Materials Science in Semiconductor Processing, 153, 107170, 2023" },
-  { year: 2023, authors: "Pepe, Yasemin, Isik, Mehmet, Karatay, Ahmet, Gasanly, Nizami, Elmali, Ayhan",  title: "Wavelength dependence of the nonlinear absorption performance and optical limiting in Bi12TiO20 single crystal", journal: "Journal of Luminescence, 253, 119494, 2023" },
-  { year: 2023, authors: "Isik, M, Guler, I, Gasanly, NM",  title: "Growth and characterization of nabi (mo0. 5w0. 5o4) 2 single crystal: A promising material for optoelectronic applications", journal: "Materials Science in Semiconductor Processing, 156, 107257, 2023" },
-  { year: 2023, authors: "Isik, M, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Growth and characterization of PbMo0. 75W0. 25O4 single crystal: A promising material for optical applications", journal: "Materials Chemistry and Physics, 296, 127280, 2023" },
-  { year: 2023, authors: "Isik, M, Guler, I, Gasanly, NM",  title: "Growth and temperature tuned band gap characteristics of NaBi (MoO4) 2 single crystal", journal: "Physica Scripta, 98(2), 025825, 2023" },
-  { year: 2023, authors: "Guler, I, Isik, M, Gasanly, N",  title: "Structural and optical properties of (TlInS2) 0.75 (TlInSe2) 0.25 thin films deposited by thermal evaporation", journal: "Journal of Materials Science: Materials in Electronics, 34(3), 177, 2023" },
-  { year: 2023, authors: "Isik, M, Delice, S, Gasanly, NM",  title: "Temperature dependence of band gap of CeO2 nanoparticle photocatalysts", journal: "Physica E: low-dimensional Systems and Nanostructures, 150, 115712, 2023" },
-  { year: 2023, authors: "Delice, S, Isik, M, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Growth and temperature-tuned band gap characteristics of LiGd (MoO4) 2 single crystals for optoelectronic applications", journal: "Ceramics International, 49(15), 25840--25847, 2023" },
-  { year: 2023, authors: "Guler, I, Isik, M, Gasanly, N",  title: "Spectroscopic ellipsometry studies of optical properties of TlIn (S0. 25Se0. 75) 2 crystal", journal: "Applied Physics A, 129(6), 442, 2023" },
-  { year: 2023, authors: "Guler, I, Isik, M, Gasanly, N",  title: "Optical characterization of (TlInS2) 0.5 (TlInSe2) 0.5 crystal by ellipsometry: linear and optical constants for optoelectronic devices", journal: "Journal of Materials Science: Materials in Electronics, 34(17), 1346, 2023" },
-  { year: 2023, authors: "Do\\ugan, An\\il, Karatay, Ahmet, Is\\ik, Mehmet, Pepe, Yasemin, Gasanly, Nizami, Elmali, Ayhan",  title: "Excitation wavelength dependent nonlinear absorption mechanisms and optical limiting properties of Bi12SiO20 single crystal", journal: "Optical Materials, 140, 113882, 2023" },
-  { year: 2023, authors: "Isik, M, Surucu, O, Gasanly, NM",  title: "Temperature-dependent current--voltage characteristics of p-GaSe0. 75S0. 25/n-Si heterojunction", journal: "Applied Physics A, 129(8), 538, 2023" },
-  { year: 2023, authors: "Pepe, Yasemin, Yildiz, Elif Akhuseyin, Isik, Mehmet, Karatay, Ahmet, Gasanly, Nizami, Elmali, Ayhan",  title: "Tunable nonlinear absorption and optical limiting behavior of NaBi (MoxW1- xO4) 2 single crystals with ratio of Molybdenum/Tungsten", journal: "Physica Scripta, 98(7), 075922, 2023" },
-  { year: 2023, authors: "Isik, Mehmet, Delice, Serdar, Gasanly, Nizami",  title: "Temperature-dependent optical properties of TiO2 nanoparticles: a study of band gap evolution", journal: "Optical and Quantum Electronics, 55(10), 905, 2023" },
-  { year: 2023, authors: "Isik, M, Guler, I, Gasanly, N",  title: "Exploring the linear and nonlinear optical behavior of (TlInS2) 0.75 (TlInSe2) 0.25: Insights from ellipsometry measurements", journal: "Physica B: Condensed Matter, 669, 415294, 2023" },
-  { year: 2022, authors: "Isik, M, Gasanly, NM, Rustamov, FA",  title: "Determination of mechanical properties of Bi12TiO20 crystals by nanoindentation", journal: "Materials Science in Semiconductor Processing, 140, 106389, 2022" },
-  { year: 2022, authors: "Terlemezoglu, MAKBULE, Surucu, O, Isik, M, Gasanly, NM, Parlak, MEHMET",  title: "Temperature-dependent optical characteristics of sputtered NiO thin films", journal: "Applied Physics A, 128(1), 50, 2022" },
-  { year: 2022, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Thermoluminescence properties and trapping parameters of TlGaS2 single crystals", journal: "Journal of Luminescence, 244, 118714, 2022" },
-  { year: 2022, authors: "Bektas, T, Terlemezoglu, MAKBULE, Surucu, O, Isik, M, Parlak, MEHMET",  title: "Growth and optical characterization of Sn0. 6Sb0. 4Se layer single crystals for optoelectronic applications", journal: "Materials Science in Semiconductor Processing, 141, 106434, 2022" },
-  { year: 2022, authors: "Isik, M, Karatay, AHMET, Gasanly, NM",  title: "Structural and optical characteristics of thermally evaporated TlGaSe2 thin films", journal: "Optical Materials, 124, 112018, 2022" },
-  { year: 2022, authors: "Isik, M, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Effect of temperature on band gap of PbWO4 single crystals grown by Czochralski method", journal: "Physica Scripta, 97(4), 045803, 2022" },
-  { year: 2022, authors: "Isik, M, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Temperature dependent bandgap in NaBi (WO4) 2 single crystals", journal: "Optik, 258, 168811, 2022" },
-  { year: 2022, authors: "Isik, M, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Structural and temperature-tuned band gap energy characteristics of PbMoO4 single crystals", journal: "Optical Materials, 126, 112210, 2022" },
-  { year: 2022, authors: "Isik, M, Sarigul, N, Gasanly, NM",  title: "Thermoluminescence characteristics of GaSe and Ga2Se3 single crystals", journal: "Journal of Luminescence, 246, 118846, 2022" },
-  { year: 2022, authors: "Isik, M, Gasanly, NM",  title: "Temperature-tuned optical bandgap of Al-doped ZnO spin coated nanostructured thin films", journal: "Materials Letters, 321, 132415, 2022" },
-  { year: 2022, authors: "Delice, S, Isik, M, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Investigation of optical characteristics of PbMoO4 single crystals by spectroscopic ellipsometry", journal: "Optik, 262, 169356, 2022" },
-  { year: 2022, authors: "Isik, M, Karatay, AHMET, Ech-Chergui, AN, Gasanly, NM",  title: "Study of the structural and optical properties of thallium gallium disulfide (TlGaS2) thin films grown via thermal evaporation", journal: "Physica Scripta, 97(7), 075808, 2022" },
-  { year: 2022, authors: "Delice, S, Isik, M, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Spectroscopic ellipsometry characterization of PbWO4 single crystals", journal: "Optical Materials, 131, 112680, 2022" },
-  { year: 2022, authors: "Isik, M, Gasanly, NM",  title: "Linear and nonlinear optical characteristics of Bi12SiO20 single crystals", journal: "Optical Materials, 131, 112692, 2022" },
-  { year: 2022, authors: "Isik, Mehmet, Terlemezoglu, Makbule, Gasanly, Nizami, Parlak, Mehmet",  title: "Structural, morphological and temperature-tuned bandgap characteristics of CuS nano-flake thin films", journal: "Physica E: Low-dimensional Systems and Nanostructures, 144, 115407, 2022" },
-  { year: 2022, authors: "Pepe, Yasemin, Isik, Mehmet, Karatay, Ahmet, Yildiz, Elif Akhuseyin, Gasanly, Nizami, Elmali, Ayhan",  title: "The role of defects on the transition from saturable absorption to nonlinear absorption of Bi12GeO20 single crystal under increasing laser excitation", journal: "Journal of Luminescence, 251, 119170, 2022" },
-  { year: 2022, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Linear and nonlinear optical characteristics of PbMoO4 single crystal for optoelectronic applications", journal: "Journal of Materials Science: Materials in Electronics, 33(28), 22281--22290, 2022" },
-  { year: 2022, authors: "Pepe, Yasemin, Isik, Mehmet, Karatay, Ahmet, Gasanly, Nizami, Elmali, Ayhan",  title: "Nonlinear optical absorption characteristics of PbMoO4 single crystal for optical limiter applications", journal: "Optical Materials, 133, 112963, 2022" },
-  { year: 2022, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Investigation of linear and nonlinear optical properties of PbWO4 single crystal", journal: "Optical Materials, 133, 113025, 2022" },
-  { year: 2022, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Shallow trapping centers in Bi12GeO20 single crystals by thermally stimulated current measurements", journal: "Materials Today Communications, 33, 104556, 2022" },
-  { year: 2022, authors: "Surucu, O, Isik, M, Terlemezoglu, MAKBULE, Bektas, T, Gasanly, NM, Parlak, MEHMET",  title: "Temperature effects on optical characteristics of thermally evaporated CuSbSe2 thin films for solar cell applications", journal: "Optical Materials, 133, 113047, 2022" },
-  { year: 2021, authors: "Gullu, HH, Isik, M, Gasanly, NM, Parlak, MEHMET",  title: "Temperature-dependent optical characteristics of sputtered Ga-doped ZnO thin films", journal: "Materials Science and Engineering: B, 263, 114834, 2021" },
-  { year: 2021, authors: "Isik, Mehmet, Emir, Cansu, Gullu, Hasan Huseyin, Gasanly, Nizami",  title: "Optical and Nanomechanical Properties of Ga2Se3 Single Crystals and Thin Films: Isik, Emir, Gullu, and Gasanly", journal: "JOM, 73(2), 558--565, 2021" },
-  { year: 2021, authors: "Erkisi, Aytac, Yildiz, Bugra, Wang, Xiaotian, Isik, Mehmet, Ozcan, Yusuf, Surucu, Gokhan",  title: "The investigation of electronic nature and mechanical properties under spin effects for new half-metallic ferromagnetic chalcogenides Ag3CrX4 (X= S, Se, and Te)", journal: "Journal of Magnetism and Magnetic Materials, 519, 167482, 2021" },
-  { year: 2021, authors: "Gullu, HH, Isik, M, Surucu, O, Gasanly, NM, Parlak, MEHMET",  title: "Temperature effects on optical characteristics of CdSe thin films", journal: "Materials Science in Semiconductor Processing, 123, 105559, 2021" },
-  { year: 2021, authors: "Isik, M, Delice, S, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Temperature-tuned bandgap characteristics of Bi12TiO20 sillenite single crystals", journal: "Journal of Materials Science: Materials in Electronics, 32(1), 1316--1322, 2021" },
-  { year: 2021, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Investigation of traps distribution in GaS single crystals by thermally stimulated current measurements", journal: "Materials Science in Semiconductor Processing, 125, 105626, 2021" },
-  { year: 2021, authors: "Delice, S, Isik, M, Sarigul, N, Gasanly, NM",  title: "Defect characterization in Bi12GeO20 single crystals by thermoluminescence", journal: "Journal of Luminescence, 233, 117905, 2021" },
-  { year: 2021, authors: "Isik, M, Emir, C, Gasanly, NM",  title: "Structural and optical properties of thermally evaporated (GaSe) 0.75--(GaS) 0.25 thin films", journal: "Optik, 230, 166344, 2021" },
-  { year: 2021, authors: "Isik, M, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Spectroscopic ellipsometry study of Bi12TiO20 single crystals", journal: "Journal of Materials Science: Materials in Electronics, 32(6), 7019--7025, 2021" },
-  { year: 2021, authors: "Erturk, K, Isik, M, Terlemezoglu, MAKBULE, Gasanly, NM",  title: "Optical and structural characteristics of electrodeposited Cd 1-xZnxS nanostructured thin films", journal: "Optical materials, 114, 110966, 2021" },
-  { year: 2021, authors: "Isik, M, Surucu, G, Gencer, A, Gasanly, NM",  title: "First principles study of bi12geo20: Electronic, optical and thermodynamic characterizations", journal: "Materials Today Communications, 27, 102299, 2021" },
-  { year: 2021, authors: "Isik, M, Surucu, G, Gencer, A, Gasanly, NM",  title: "Electronic, optical and thermodynamic characteristics of Bi12SiO20 sillenite: First principle calculations", journal: "Materials Chemistry and Physics, 267, 124711, 2021" },
-  { year: 2021, authors: "Surucu, O, Isik, M, Terlemezoglu, MAKBULE, Gasanly, NM, Parlak, MEHMET",  title: "Structural and temperature-tuned bandgap characteristics of thermally evaporated $\\beta$-In2S3 thin films", journal: "Journal of Materials Science: Materials in Electronics, 32(12), 15851--15856, 2021" },
-  { year: 2021, authors: "Isik, M, Gasanly, NM",  title: "Effect of thallium (Tl) substitution for indium (In) on ellipsometric characteristics of TlInSe2 single crystals", journal: "Materials Science in Semiconductor Processing, 134, 106005, 2021" },
-  { year: 2021, authors: "Isik, M, Surucu, G, Gencer, A, Gasanly, NM",  title: "Evaluation of mechanical properties of Bi12SiO20 sillenite using first principles and nanoindentation", journal: "Philosophical Magazine, 101(20), 2200--2215, 2021" },
-  { year: 2021, authors: "Isik, M, Terlemezoglu, MAKBULE, Isik, S, Erturk, K, Gasanly, NM",  title: "The effect of Zn concentration on the structural and optical properties of Cd1-xZnxS nanostructured thin films", journal: "Journal of Materials Science: Materials in Electronics, 32(20), 25225--25233, 2021" },
-  { year: 2021, authors: "Surucu, Gokhan, Isik, Mehmet, Gencer, Aysenur, Gasanly, Nizami",  title: "Experimental and theoretical investigation of the mechanical characteristics of sillenite compound: Bi12GeO20", journal: "Journal of Alloys and Compounds, 882, 160686, 2021" },
-  { year: 2021, authors: "Isik, M, Gasanly, NM",  title: "Effect of thallium (Tl) substitution for indium (In) on ellipsometric characteristics of TlInSe2 single crystals", journal: "Materials Science in Semiconductor Processing, 134, 106005, 2021" },
-  { year: 2021, authors: "Isik, M, Surucu, G, Gencer, A, Gasanly, NM",  title: "Evaluation of mechanical properties of Bi12SiO20 sillenite using first principles and nanoindentation", journal: "Philosophical Magazine, 101(20), 2200--2215, 2021" },
-  { year: 2021, authors: "Isik, M, Terlemezoglu, MAKBULE, Isik, S, Erturk, K, Gasanly, NM",  title: "The effect of Zn concentration on the structural and optical properties of Cd1-xZnxS nanostructured thin films", journal: "Journal of Materials Science: Materials in Electronics, 32(20), 25225--25233, 2021" },
-  { year: 2021, authors: "Isik, M, Delice, S, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Trapping centers in Bi12TiO20 single crystals by thermally stimulated current", journal: "Optical Materials, 122, 111797, 2021" },
-  { year: 2021, authors: "Isik, M, Delice, S, Gasanly, NM",  title: "Investigation of defect levels in Bi12SiO20 single crystals by thermally stimulated current measurements", journal: "Physica Scripta, 96(12), 125875, 2021" },
-  { year: 2020, authors: "Isik, M, Gasanly, NM",  title: "Temperature-tuned band gap characteristics of InSe layered semiconductor single crystals", journal: "Materials Science in Semiconductor Processing, 107, 104862, 2020" },
-  { year: 2020, authors: "Gullu, HH, Isik, M, Delice, S, Parlak, MEHMET, Gasanly, NM",  title: "Material and device properties of Si-based Cu0. 5Ag0. 5InSe2 thin-film heterojunction diode", journal: "Journal of Materials Science: Materials in Electronics, 31(2), 1566--1573, 2020" },
-  { year: 2020, authors: "Isik, M, Guler, I, Gasanly, NM",  title: "Thermoluminescence characterization of (Ga2Se3) 0.25--(Ga2S3) 0.75 single crystal compounds", journal: "Materials Science in Semiconductor Processing, 108, 104875, 2020" },
-  { year: 2020, authors: "Surucu, Gokhan, Gencer, Aysenur, Candan, Abdullah, Gullu, Hasan H, Isik, Mehmet",  title: "CaXH3 (X= Mn, Fe, Co) perovskite-type hydrides for hydrogen storage applications", journal: "International Journal of Energy Research, 44(3), 2345--2354, 2020" },
-  { year: 2020, authors: "Isik, M, Gullu, HH, Parlak, Mehmet, Gasanly, NM",  title: "Synthesis and temperature-tuned band gap characteristics of magnetron sputtered ZnTe thin films", journal: "Physica B: Condensed Matter, 582, 411968, 2020" },
-  { year: 2020, authors: "Isik, M, Delice, Serdar, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Investigation of optical properties of Bi12GeO20 sillenite crystals by spectroscopic ellipsometry and Raman spectroscopy", journal: "Ceramics International, 46(9), 12905--12910, 2020" },
-  { year: 2020, authors: "Isik, M, Nasser, H, Guseinov, A, Gasanly, NM",  title: "Optical constants and critical point energies of (AgInSe2) 0.75--(In2Se3) 0.25 single crystals", journal: "Journal of Materials Science: Materials in Electronics, 31(6), 4702--4707, 2020" },
-  { year: 2020, authors: "Gullu, HH, Isik, M, Gasanly, NM, Parlak, Mehmet",  title: "Temperature-dependent optical and electrical characterization of Cu-Ga-S thin films and their diode characteristics on n-Si", journal: "Optik, 208, 164485, 2020" },
-  { year: 2020, authors: "Gullu, HH, Surucu, O, Terlemezoglu, MAKBULE, et al.",  title: "Temperature-dependent material characterization of CuZnSe2 thin films", journal: "Thin Solid Films, 701, 137941, 2020" },
-  { year: 2020, authors: "Delice, S, Isik, M, Gullu, HH, et al.",  title: "Temperature dependent band gap in SnS2xSe (2-2x)(x= 0.5) thin films", journal: "Materials Science in Semiconductor Processing, 114, 105083, 2020" },
-  { year: 2020, authors: "Surucu, Gokhan, Isik, Mehmet, Candan, Abdullah, Wang, Xiaotian, Gullu, Hasan Huseyin",  title: "Investigation of structural, electronic, magnetic and lattice dynamical properties for XCoBi (X: Ti, Zr, Hf) Half-Heusler compounds", journal: "Physica B: condensed matter, 587, 412146, 2020" },
-  { year: 2020, authors: "Isik, M, Sarigul, N, Gasanly, NM",  title: "Thermoluminescence characteristics of Bi12SiO20 single crystals", journal: "Journal of Luminescence, 224, 117280, 2020" },
-  { year: 2020, authors: "Gullu, HH, Isik, Mehmet, Gasanly, NM, Parlak, Mehmet",  title: "Influence of temperature on optical properties of electron-beam-evaporated ZnSe thin film", journal: "Physica Scripta, 95(7), 075804, 2020" },
-  { year: 2020, authors: "Isik, M, Y\\\"uksel, MEHMET, Topaksu, MUSTAFA, Gasanly, NM",  title: "TL and OSL studies on gallium sulfide (GaS) single crystals", journal: "Journal of Luminescence, 225, 117362, 2020" },
-  { year: 2020, authors: "Delice, S, Isik, M, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Structural and temperature-tuned optical characteristics of Bi12GeO20 sillenite crystals", journal: "Chinese Journal of Physics, 66, 422--429, 2020" },
-  { year: 2020, authors: "Isik, M, Gullu, HH, Terlemezoglu, MAKBULE, Surucu, O Bayrakli, Parlak, Mehmet, Gasanly, NM",  title: "Investigation of band gap energy versus temperature for SnS2 thin films grown by RF-magnetron sputtering", journal: "Physica B: Condensed Matter, 591, 412264, 2020" },
-  { year: 2020, authors: "Gullu, HH, Surucu, O Bayrakl\\i, Isik, M, Terlemezoglu, MAKBULE, Parlak, MEHMET",  title: "Material and Si-based diode analyses of sputtered ZnTe thin films", journal: "Journal of Materials Science: Materials in Electronics, 31(14), 11390--11397, 2020" },
-  { year: 2020, authors: "Isik, M, Gasanly, NM",  title: "Investigation of structural and optical characteristics of thermally evaporated Ga2Se3 thin films", journal: "Vacuum, 179, 109501, 2020" },
-  { year: 2020, authors: "Surucu, O, Isik, M, Gasanly, NM, Terlemezoglu, MAKBULE, Parlak, MEHMET",  title: "Temperature-tuned band gap properties of MoS2 thin films", journal: "Materials Letters, 275, 128080, 2020" },
-  { year: 2020, authors: "Isik, M, Terlemezoglu, MAKBULE, Gasanly, NM, Babayeva, RF",  title: "Vibrational modes in (TlGaS2) x--(TlGaSe2) 1- x mixed crystals by Raman measurements: compositional dependence of the mode frequencies and line-shapes", journal: "Journal of Materials Science: Materials in Electronics, 31(17), 14330--14335, 2020" },
-  { year: 2020, authors: "Isik, M, Delice, Serdar, Nasser, H, Gasanly, Nizami Mamed, Darvishov, NH, Bagiev, VE",  title: "Optical characteristics of Bi12SiO20 single crystals by spectroscopic ellipsometry", journal: "Materials Science in Semiconductor Processing, 120, 105286, 2020" },
-  { year: 2019, authors: "Delice, Serdar, Isik, M, Gasanly, Nizami Mamed",  title: "Low temperature thermoluminescence behaviour of Y2O3 nanoparticles", journal: "Journal of Rare Earths, 37(1), 19--23, 2019" },
-  { year: 2019, authors: "Isik, M, Gasanly, NM",  title: "Gd-doped ZnO nanoparticles: Synthesis, structural and thermoluminescence properties", journal: "Journal of Luminescence, 207, 220--225, 2019" },
-  { year: 2019, authors: "Isik, M, Gullu, HH, Delice, Serdar, Parlak, Mehmet, Gasanly, Nizami Mamed",  title: "Structural and temperature-dependent optical properties of thermally evaporated CdS thin films", journal: "Materials Science in Semiconductor Processing, 93, 148--152, 2019" },
-  { year: 2019, authors: "Guler, I\\cSIKHAN, Isik, M, Gasanly, Nizami Mamed, Gasanova, LG, Babayeva, RF",  title: "Structural and Optical Properties of Ga2Se3 Crystals by Spectroscopic Ellipsometry: Guler, Isik, Gasanly, Gasanova, and Babayeva", journal: "Journal of Electronic Materials, 48(4), 2418--2422, 2019" },
-  { year: 2019, authors: "Delice, Serdar, Isik, Mehmet, Gasanly, Nizami M",  title: "Low temperature thermoluminescence of Gd2O3 nanoparticles using various heating rate and Tmax- Texc. methods", journal: "Results in Physics, 12, 1809--1813, 2019" },
-  { year: 2019, authors: "Isik, M, Gasanly, NM, Gasanova, L",  title: "Optical properties of (Ga2Se3) 0.75--(Ga2S3) 0.25 single crystals by spectroscopic ellipsometry", journal: "Physica B: Condensed Matter, 560, 6--10, 2019" },
-  { year: 2019, authors: "Delice, Serdar, Isik, M, Gasanly, Nizami Mamed",  title: "Traps distribution in sol-gel synthesized ZnO nanoparticles", journal: "Materials Letters, 245, 103--105, 2019" },
-  { year: 2019, authors: "Delice, Serdar, Isik, M, Gullu, HH, et al.",  title: "Temperature dependence of band gaps in sputtered SnSe thin films", journal: "Journal of Physics and Chemistry of Solids, 131, 22--26, 2019" },
-  { year: 2019, authors: "Isik, M, Gullu, HH, Coskun, E, Gasanly, NM",  title: "Optical band gap and dispersion of optical constants of Cu-Ga-S thin films", journal: "Optik, 186, 147--154, 2019" },
-  { year: 2019, authors: "Isik, M, Gullu, HH, Delice, S, Gasanly, NM, Parlak, Mehmet",  title: "Analysis of temperature-dependent transmittance spectra of Zn0. 5In0. 5Se (ZIS) thin films", journal: "Journal of Materials Science: Materials in Electronics, 30(10), 9356--9362, 2019" },
-  { year: 2019, authors: "Delice, Serdar, Isik, Mehmet, Gasanly, Nizami Mamed",  title: "Effect of heating rate on thermoluminescence characteristics of Y2O3 nanoparticles", journal: "Journal of Luminescence, 212, 233--237, 2019" },
-  { year: 2019, authors: "Isik, M, Gasanly, NM",  title: "The defect state of Yb-doped ZnO nanoparticles using thermoluminescence study", journal: "Materials Science in Semiconductor Processing, 100, 29--34, 2019" },
-  { year: 2019, authors: "Isik, M, Guler, I, Gasanly, NM",  title: "Study of vibrational modes in (Ga2S3) x-(Ga2Se3) 1-x mixed crystals by Raman and infrared reflection measurements", journal: "Optical Materials, 95, 109228, 2019" },
-  { year: 2019, authors: "Surucu, Gokhan, Candan, Abdullah, Gencer, Ay\\csenur, Isik, Mehmet",  title: "First-principle investigation for the hydrogen storage properties of NaXH3 (X= Mn, Fe, Co) perovskite type hydrides", journal: "International Journal of Hydrogen Energy, 44(57), 30218--30225, 2019" },
-  { year: 2019, authors: "Isik, M, Delice, S, Gasanly, NM, Darvishov, NH, Bagiev, VE",  title: "Temperature-dependent band gap characteristics of Bi12SiO20 single crystals", journal: "Journal of Applied Physics, 126(24), 2019" },
-  { year: 2018, authors: "Delice, Serdar, Isik, M, Gasanly, Nizami Mamed",  title: "Trap distribution in AgIn5S8 single crystals: Thermoluminescence study", journal: "Journal of Physics and Chemistry of Solids, 114, 53--57, 2018" },
-  { year: 2018, authors: "Delice, Serdar, Isik, M, Gasanly, Nizami Mamed",  title: "Characterization of trap centers in Gd2O3 nanoparticles by low temperature thermoluminescence measurements", journal: "Optik, 158, 237--242, 2018" },
-  { year: 2018, authors: "Isik, M, Gasanly, NM",  title: "Trap characterization by photo-transferred thermoluminescence in MgO nanoparticles", journal: "Physica B: Condensed Matter, 537, 301--305, 2018" },
-  { year: 2018, authors: "Isik, M, Gullu, HASAN",  title: "Annealing Effect on Dark Electrical Conductivity and Photoconductivity of Ga-In-Se Thin Films", journal: "Acta Physica Polonica A, 133(5), 1119--1124, 2018" },
-  { year: 2018, authors: "Delice, Serdar, Isik, M, Gasanly, Nizami Mamed",  title: "Study on thermoluminescence of TlInS2 layered crystals doped with Pr", journal: "Materials Science in Semiconductor Processing, 80, 99--103, 2018" },
-  { year: 2018, authors: "Isik, M, Gasanly, NM, Gasanova, LG, Mahammadov, AZ",  title: "Thermoluminescence study in Cu3Ga5S9 single crystals: Application of heating rate and Tm--Tstop methods", journal: "Journal of Luminescence, 199, 334--338, 2018" },
-  { year: 2018, authors: "Guler, I\\cSIKHAN, Isik, M, Gasanova, L, Mahammadov, A, Gasanly, NIZAMI",  title: "Thermoluminescence in gallium sesquisulfide single crystals: usual and unusual heating rate dependencies", journal: "Optik, 165, 132--136, 2018" },
-  { year: 2018, authors: "Guler, I\\cSIKHAN, Isik, M, Ahmedova, F, Guseinov, A, Gasanly, NIZAMI",  title: "Characteristic features of thermoluminescence in neodymium-doped gallium sulfide", journal: "Luminescence, 33(4), 759--763, 2018" },
-  { year: 2018, authors: "Isik, M, Gasanly, NM",  title: "Thermoluminescence properties of Al doped ZnO nanoparticles", journal: "Ceramics International, 44(12), 13929--13933, 2018" },
-  { year: 2018, authors: "Isik, M, Nasser, H, Ahmedova, F, Guseinov, A, Gasanly, NM",  title: "Optical properties of Cu3In5S9 single crystals by spectroscopic ellipsometry", journal: "Optik, 171, 77--82, 2018" },
-  { year: 2018, authors: "Gullu, HH, Isik, M, Gasanly, NM",  title: "Structural and optical properties of thermally evaporated Cu-Ga-S (CGS) thin films", journal: "Physica B: Condensed Matter, 547, 92--96, 2018" },
-  { year: 2018, authors: "Isik, M, Gasanly, NM, Gasanova, L",  title: "Spectroscopic ellipsometry investigation of optical properties of $\\beta$-Ga2S3 single crystals", journal: "Optical Materials, 86, 95--99, 2018" },
-  { year: 2017, authors: "Isik, Mehmet, Gasanly, Nizami",  title: "Composition-tuned band gap energy and refractive index in GaSxSe1- x layered mixed crystals", journal: "Materials Chemistry and Physics, 190, 74--78, 2017" },
-  { year: 2017, authors: "Isik, Mehmet, Gasanly, Nizami",  title: "Analysis of optical constants and temperature-dependent absorption edge of GaS0. 75Se0. 25 layered crystals", journal: "Materials Research Bulletin, 90, 280--284, 2017" },
-  { year: 2017, authors: "Isik, M, Bulur, ENVER, Gasanly, NM",  title: "Photo-transferred thermoluminescence of shallow traps in $\\beta$-irradiated BeO ceramics", journal: "Journal of Luminescence, 187, 290--294, 2017" },
-  { year: 2017, authors: "Isik, Mehmet, Tugay, Evrin, Gasanly, Nizami",  title: "Optical properties of GaS crystals: combined study of temperature-dependent band gap energy and oscillator parameters", journal: "Indian J. Pure Appl. Phys., 55, 583--588, 2017" },
-  { year: 2017, authors: "Isik, M, Gasanly, NIZAMI, others",  title: "Determination of optical constants and temperature dependent band gap energy of GaS0. 25Se0. 75 single crystals", journal: "Journal of Optoelectronics and Advanced Materials, 19(5-6), 374--378, 2017" },
-  { year: 2016, authors: "Isik, M, Delice, S, Gasanly, NIZAMI",  title: "Defect characterization of Ga4Se3S layered single crystals by thermoluminescence", journal: "Pramana, 86(4), 893--900, 2016" },
-  { year: 2016, authors: "Isik, Mehmet, Gasanly, Nizami",  title: "Optical characterization of CuIn5S8 crystals by ellipsometry measurements", journal: "Journal of Physics and Chemistry of Solids, 91, 13--17, 2016" },
-  { year: 2016, authors: "Isik, M, Yildirim, TACETT\\.IN, Gasanly, NM",  title: "Thermoluminescence properties of ZnO nanoparticles in the temperature range 10--300 K", journal: "Journal of Sol-Gel Science and Technology, 78(1), 76--81, 2016" },
-  { year: 2016, authors: "Isik, Mehmet, Gasanly, Nizami",  title: "Ellipsometric study of optical properties of GaSxSe1-x layered mixed crystals", journal: "Optical Materials, 54, 155--159, 2016" },
-  { year: 2016, authors: "Isik, Mehmet, Tugay, Evrin, Gasanly, Nizami",  title: "Temperature-tuned band gap energy and oscillator parameters of GaS0. 5Se0. 5 single crystals", journal: "Optik, 127(20), 8301--8305, 2016" },
-  { year: 2016, authors: "Isik, M, Yildirim, TACETT\\.IN, Gasanly, N",  title: "Analysis of Thermoluminescence Glow Peaks in $\\beta$-Irradiated TlGaSeS Crystals", journal: "Acta Physica Polonica A, 129(6), 1165--1168, 2016" },
-  { year: 2016, authors: "Isik, M, Tugay, EVR\\.IN, Gasanly, NM",  title: "Temperature-dependent optical properties of GaSe layered single crystals", journal: "Philosophical Magazine, 96(24), 2564--2573, 2016" },
-  { year: 2016, authors: "Isik, M, Gasanly, NM",  title: "Optical parameters of anisotropic chain-structured Tl2InGaTe4 crystals by spectroscopic ellipsometry", journal: "Optik, 127(22), 10637--10642, 2016" },
-  { year: 2015, authors: "Delice, SERDAR, Isik, M, Bulur, ENVER, Gasanly, NM",  title: "Low temperature thermoluminescence of quaternary thallium sulfide Tl4InGa3S8", journal: "Indian Journal of Physics, 89(6), 571--576, 2015" },
-  { year: 2015, authors: "Isik, M, Yildirim, TACETT\\.IN, Gasanly, NM",  title: "Determination of trapping parameters of thermoluminescent glow peaks of semiconducting Tl2Ga2S3Se crystals", journal: "Journal of Physics and Chemistry of Solids, 82, 56--59, 2015" },
-  { year: 2015, authors: "Isik, Mehmet, Gasanly, Nizami",  title: "Optical characterization of Ga 2 SeS layered crystals by transmission, reflection and ellipsometry", journal: "Modern Physics Letters B, 29(18), 1550088, 2015" },
-  { year: 2015, authors: "Delice, SERDAR, Isik, M, Bulur, ENVER, Gasanly, NM",  title: "Low temperature thermoluminescence of quaternary thallium sulfide Tl4InGa3S8", journal: "Indian Journal of Physics, 89(6), 571--576, 2015" },
-  { year: 2015, authors: "Isik, M, Yildirim, TACETT\\.IN, Gasanly, NM",  title: "Determination of trapping parameters of thermoluminescent glow peaks of semiconducting Tl2Ga2S3Se crystals", journal: "Journal of Physics and Chemistry of Solids, 82, 56--59, 2015" },
-  { year: 2015, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Transmission, reflection and thermoluminescence studies on GaS0. 75Se0. 25 layered single crystals", journal: "Materials Research Bulletin, 70, 236--240, 2015" },
-  { year: 2015, authors: "Isik, Mehmet, Delice, Serdar, Gasanly, Nizami",  title: "Analysis of glow curve of GaS0. 5Se0. 5 single crystals", journal: "Journal of Luminescence, 168, 236--240, 2015" },
-  { year: 2015, authors: "Isik, Mehmet, Gasanly, Nizami",  title: "Ellipsometry study of optical parameters of AgIn5S8 crystals", journal: "Physica B: Condensed Matter, 478, 127--130, 2015" },
-  { year: 2014, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Trapping centers and their distribution in Tl2InGaSe4 single crystals by thermally stimulated luminescence", journal: "Journal of Materials Science, 49(6), 2542--2547, 2014" },
-  { year: 2014, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Thermoluminescence characteristics of Tl4GaIn3S8 layered single crystals", journal: "Philosophical Magazine, 94(2), 141--151, 2014" },
-  { year: 2014, authors: "I\\csik, Mehmet, G\\\"ull\\\"u, Hasan H\\\"useyin",  title: "Structural and optical properties of thermally evaporated Ga--In--Se thin films", journal: "Modern Physics Letters B, 28(13), 1450101, 2014" },
-  { year: 2014, authors: "Isik, M, Delice, S, Gasanly, NM",  title: "Optical properties of TlGaxIn1-xSe2-layered mixed crystals (0.5≤ x≤ 1) by spectroscopic ellipsometry, transmission, and reflection measurements", journal: "Philosophical Magazine, 94(23), 2623--2632, 2014" },
-  { year: 2014, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Trapping centers and their distribution in Tl2InGaSe4 single crystals by thermally stimulated luminescence", journal: "Journal of Materials Science, 49(6), 2542--2547, 2014" },
-  { year: 2014, authors: "Isik, M, Delice, S, Gasanly, NIZAMI",  title: "Low-Temperature Thermoluminescence Studies on TlInS_2 Layered Single Crystals", journal: "Acta Physica Polonica A, 126(6), 1299--1303, 2014" },
-  { year: 2014, authors: "Isik, M, Hadibrata, W, Gasanly, NM",  title: "Annealing effect on the low temperature thermoluminescence properties of GaSe single crystals", journal: "Journal of luminescence, 154, 131--135, 2014" },
-  { year: 2014, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Thermoluminescence characteristics of Tl4GaIn3S8 layered single crystals", journal: "Philosophical Magazine, 94(2), 141--151, 2014" },
-  { year: 2014, authors: "Isik, M, Gasanly, NIZAMI, Korkmaz, F",  title: "Compositional Dependence of Optical Modes Frequencies in TlGa_xIn_1-xS_2 Layered Mixed Crystals (0≤ x≤ 1)", journal: "Acta Physica Polonica A, 126(3), 747--750, 2014" },
-  { year: 2014, authors: "I\\csik, Mehmet, G\\\"ull\\\"u, Hasan H\\\"useyin",  title: "Structural and optical properties of thermally evaporated Ga--In--Se thin films", journal: "Modern Physics Letters B, 28(13), 1450101, 2014" },
-  { year: 2014, authors: "Isik, M, Delice, S, Gasanly, NM",  title: "Optical properties of TlGaxIn1-xSe2-layered mixed crystals (0.5≤ x≤ 1) by spectroscopic ellipsometry, transmission, and reflection measurements", journal: "Philosophical Magazine, 94(23), 2623--2632, 2014" },
-  { year: 2014, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Trapping centers and their distribution in Tl2InGaSe4 single crystals by thermally stimulated luminescence", journal: "Journal of Materials Science, 49(6), 2542--2547, 2014" },
-  { year: 2014, authors: "Isik, M, Delice, S, Gasanly, NIZAMI",  title: "Low-Temperature Thermoluminescence Studies on TlInS_2 Layered Single Crystals", journal: "Acta Physica Polonica A, 126(6), 1299--1303, 2014" },
-  { year: 2014, authors: "Isik, M, Hadibrata, W, Gasanly, NM",  title: "Annealing effect on the low temperature thermoluminescence properties of GaSe single crystals", journal: "Journal of luminescence, 154, 131--135, 2014" },
-  { year: 2014, authors: "Delice, S, Isik, M, Gasanly, NM",  title: "Thermoluminescence characteristics of Tl4GaIn3S8 layered single crystals", journal: "Philosophical Magazine, 94(2), 141--151, 2014" },
-  { year: 2014, authors: "Isik, M, Gasanly, NIZAMI, Korkmaz, F",  title: "Compositional Dependence of Optical Modes Frequencies in TlGa_xIn_1-xS_2 Layered Mixed Crystals (0≤ x≤ 1)", journal: "Acta Physica Polonica A, 126(3), 747--750, 2014" },
-  { year: 2013, authors: "Isik, M, Bulur, ENVER, Gasanly, NM",  title: "Low-temperature thermoluminescence in TlGaS2 layered single crystals", journal: "Journal of luminescence, 135, 60--65, 2013" },
-  { year: 2013, authors: "Isik, M, Bulur, ENVER, Gasanly, NM",  title: "TL and TSC studies on TlGaSe2 layered single crystals", journal: "Journal of luminescence, 144, 163--168, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Korkmaz, F",  title: "Multiphonon absorption processes in layered structured TlGaS2, TlInS2 and TlGaSe2 single crystals", journal: "Physica B: Condensed Matter, 421, 50--52, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Turan, Ra\\csit",  title: "Interband transitions in gallium sulfide layered single crystals by ellipsometry measurements", journal: "Physica B: Condensed Matter, 408, 43--45, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Turan, Ra\\csit",  title: "Optical constants and interband transitions of anisotropic layered structured Tl2GaInS4 crystals by spectroscopic ellipsometry", journal: "Journal of alloys and compounds, 549, 179--183, 2013" },
-  { year: 2013, authors: "Isik, M, Guler, I, Gasanly, NM",  title: "Temperature and excitation intensity tuned photoluminescence in Ga0. 75In0. 25Se crystals", journal: "Optical Materials, 35(3), 414--418, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM",  title: "Interband critical points in TlGaxIn1- xS2 layered mixed crystals (0⩽ x⩽ 1)", journal: "Journal of alloys and compounds, 581, 542--546, 2013" },
-  { year: 2013, authors: "Delice, SERDAR, Isik, M, Bulur, ENVER, Gasanly, NM",  title: "Thermoluminescence properties of Tl2Ga2S3Se layered single crystals", journal: "Journal of Applied Physics, 113(19), 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Korkmaz, F",  title: "Infrared and Raman scattering spectra of layered structured Ga3InSe4 crystals", journal: "Physica B: Condensed Matter, 412, 61--63, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM",  title: "Temperature-dependent electrical resistivity, space-charge-limited current and photoconductivity of Ga0. 75In0. 25Se single crystals", journal: "Physica B: Condensed Matter, 421, 53--56, 2013" },
-  { year: 2013, authors: "Isik, M, Bulur, ENVER, Gasanly, NM",  title: "Low-temperature thermoluminescence in TlGaS2 layered single crystals", journal: "Journal of luminescence, 135, 60--65, 2013" },
-  { year: 2013, authors: "Isik, M, Bulur, ENVER, Gasanly, NM",  title: "TL and TSC studies on TlGaSe2 layered single crystals", journal: "Journal of luminescence, 144, 163--168, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Korkmaz, F",  title: "Multiphonon absorption processes in layered structured TlGaS2, TlInS2 and TlGaSe2 single crystals", journal: "Physica B: Condensed Matter, 421, 50--52, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Turan, Ra\\csit",  title: "Interband transitions in gallium sulfide layered single crystals by ellipsometry measurements", journal: "Physica B: Condensed Matter, 408, 43--45, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Turan, Ra\\csit",  title: "Optical constants and interband transitions of anisotropic layered structured Tl2GaInS4 crystals by spectroscopic ellipsometry", journal: "Journal of alloys and compounds, 549, 179--183, 2013" },
-  { year: 2013, authors: "Isik, M, Guler, I, Gasanly, NM",  title: "Temperature and excitation intensity tuned photoluminescence in Ga0. 75In0. 25Se crystals", journal: "Optical Materials, 35(3), 414--418, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM",  title: "Interband critical points in TlGaxIn1- xS2 layered mixed crystals (0⩽ x⩽ 1)", journal: "Journal of alloys and compounds, 581, 542--546, 2013" },
-  { year: 2013, authors: "Delice, SERDAR, Isik, M, Bulur, ENVER, Gasanly, NM",  title: "Thermoluminescence properties of Tl2Ga2S3Se layered single crystals", journal: "Journal of Applied Physics, 113(19), 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Korkmaz, F",  title: "Infrared and Raman scattering spectra of layered structured Ga3InSe4 crystals", journal: "Physica B: Condensed Matter, 412, 61--63, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM",  title: "Temperature-dependent electrical resistivity, space-charge-limited current and photoconductivity of Ga0. 75In0. 25Se single crystals", journal: "Physica B: Condensed Matter, 421, 53--56, 2013" },
-  { year: 2013, authors: "Isik, M, Bulur, ENVER, Gasanly, NM",  title: "Low-temperature thermoluminescence in TlGaS2 layered single crystals", journal: "Journal of luminescence, 135, 60--65, 2013" },
-  { year: 2013, authors: "Isik, M, Bulur, ENVER, Gasanly, NM",  title: "TL and TSC studies on TlGaSe2 layered single crystals", journal: "Journal of luminescence, 144, 163--168, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Korkmaz, F",  title: "Multiphonon absorption processes in layered structured TlGaS2, TlInS2 and TlGaSe2 single crystals", journal: "Physica B: Condensed Matter, 421, 50--52, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Turan, Ra\\csit",  title: "Interband transitions in gallium sulfide layered single crystals by ellipsometry measurements", journal: "Physica B: Condensed Matter, 408, 43--45, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Turan, Ra\\csit",  title: "Optical constants and interband transitions of anisotropic layered structured Tl2GaInS4 crystals by spectroscopic ellipsometry", journal: "Journal of alloys and compounds, 549, 179--183, 2013" },
-  { year: 2013, authors: "Isik, M, Guler, I, Gasanly, NM",  title: "Temperature and excitation intensity tuned photoluminescence in Ga0. 75In0. 25Se crystals", journal: "Optical Materials, 35(3), 414--418, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM",  title: "Interband critical points in TlGaxIn1- xS2 layered mixed crystals (0⩽ x⩽ 1)", journal: "Journal of alloys and compounds, 581, 542--546, 2013" },
-  { year: 2013, authors: "Delice, SERDAR, Isik, M, Bulur, ENVER, Gasanly, NM",  title: "Thermoluminescence properties of Tl2Ga2S3Se layered single crystals", journal: "Journal of Applied Physics, 113(19), 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM, Korkmaz, F",  title: "Infrared and Raman scattering spectra of layered structured Ga3InSe4 crystals", journal: "Physica B: Condensed Matter, 412, 61--63, 2013" },
-  { year: 2013, authors: "Isik, M, Gasanly, NM",  title: "Temperature-dependent electrical resistivity, space-charge-limited current and photoconductivity of Ga0. 75In0. 25Se single crystals", journal: "Physica B: Condensed Matter, 421, 53--56, 2013" },
-  { year: 2012, authors: "Isik, M, Cetin, SS, Gasanly, NM, Ozcelik, Suleyman",  title: "Optical constants of layered structured Ga0. 75In0. 25Se crystals from the ellipsometric measurements", journal: "Solid state communications, 152(9), 791--793, 2012" },
-  { year: 2012, authors: "Isik, M, Gasanly, NM",  title: "Determination of optical parameters of Ga0. 75In0. 25Se layered crystals", journal: "Crystal Research and Technology, 47(5), 530--534, 2012" },
-  { year: 2012, authors: "Isik, M, Gasanly, NM, Turan, Ra\\csit",  title: "Spectroscopic ellipsometry study of above-band gap optical constants of layered structured TlGaSe2, TlGaS2 and TlInS2 single crystals", journal: "Physica B: Condensed Matter, 407(21), 4193--4197, 2012" },
-  { year: 2012, authors: "Isik, M, Gasanly, NM",  title: "Absorption edge and optical constants of Tl2Ga2S3Se crystals from reflection and transmission, and ellipsometric measurements", journal: "Physica B: Condensed Matter, 407(12), 2229--2233, 2012" },
-  { year: 2012, authors: "Isik, M, Gasanly, NM",  title: "Ellipsometry study of interband transitions in TlGaS2xSe2 (1- x) mixed crystals (0≤ x≤ 1)", journal: "Optics Communications, 285(20), 4092--4096, 2012" },
-  { year: 2012, authors: "Isik, M, Bulur, Enver, Gasanly, NM",  title: "Low-temperature thermoluminescence in layered structured Ga0. 75In0. 25Se single crystals", journal: "Journal of alloys and compounds, 545, 153--156, 2012" },
-  { year: 2012, authors: "Isik, M, Gasanly, NM",  title: "Dielectric functions and interband critical points of anisotropic chain structured TlSe single crystals", journal: "Journal of Applied Physics, 112(8), 2012" },
-  { year: 2012, authors: "Isik, M, Bulur, Enver, Gasanly, NM",  title: "Low-temperature thermoluminescence in layered structured Ga0. 75In0. 25Se single crystals", journal: "Journal of alloys and compounds, 545, 153--156, 2012" },
-  { year: 2011, authors: "Isik, M, Gasanly, NM",  title: "Thermally stimulated current measurements in undoped Ga3InSe4 single crystals", journal: "Journal of Physics and Chemistry of Solids, 72(6), 768--772, 2011" },
-  { year: 2011, authors: "Isik, M, Gasanly, NM",  title: "Trapping center parameters in In6S7 crystals", journal: "Physica B: Condensed Matter, 406(13), 2650--2653, 2011" },
-  { year: 2009, authors: "Isik, M, Gasanly, NIZAMI, Ozkan, H",  title: "Deep Traps Distribution in TlInS_2 Layered Crystals", journal: "Acta Physica Polonica A, 115(3), 732--737, 2009" },
-  { year: 2009, authors: "Isik, M, Gasanly, NM",  title: "Trapping centers and their distribution in Tl2Ga2Se3S layered single crystals", journal: "Journal of Physics and Chemistry of Solids, 70(6), 1048--1053, 2009" },
-  { year: 2008, authors: "Isik, M, Goksen, K, Gasantly, NM, Ozkan, H",  title: "Trap distribution in TlInS2 layered crystals from thermally stimulated current measurements", journal: "Journal of the Korean Physical Society, 367--373, 2008" },
- // Diğer 180 makaleyi de bu formatta eklemeye devam edebilirsiniz.
+            { year: 2026, authors: "O. Hilal, H. G. Emur, A. Dogan, E. A. Yildiz, M. Isik, M. Parlak, O. Surucu, A. Elmali, A. Karatay", title: "Nonlinear optical and optical limiting properties of In2S3 chalcogenide thin films: Influence of defect states and deposition technique", journal: "Journal of Luminescence, 293, 121804" },
+            { year: 2026, authors: "Isik, M and Yildirim, T and Tuzemen, S", title: "As-rich GaAs Crystals: Temperature-Dependent Photoluminescence and Defect-Mediated Emission", journal: "Journal of Luminescence, 121783" },
+            { year: 2026, authors: "Balayeva, L and Guseinov, A and Akhmedova, F and Isik, M", title: "Effect of Low-Concentration Boron Incorporation on the Structural Coherence and Phonon Modes of Layered GaSe", journal: "Micro and Nanostructures, 208604" },
+            { year: 2025, authors: "Isik, M and Hasanli, Nizami", title: "Nanoindentation study of PbMoO4 crystals: mechanical properties and implications for applications", journal: "Materials Research" },
+            { year: 2017, authors: "Isik, M and Gasanly, NM", title: "Composition-tuned band gap energy and refractive index in GaSxSe1-x layered mixed crystals", journal: "Materials Chemistry and Physics, 190, 74-80" },
+            { year: 2011, authors: "Isik, M and Gasanly, NM", title: "Thermally stimulated current measurements in undoped Ga3InSe4 single crystals", journal: "Journal of Physics and Chemistry of Solids, 72, 768-772" },
+            { year: 2009, authors: "Isik, M and Gasanly, Nizami and Ozkan, H", title: "Deep Traps Distribution in TlInS2 Layered Crystals", journal: "Acta Physica Polonica A, 115, 732-737" },
+            { year: 2008, authors: "Isik, M and Goksen, K and Gasantly, NM and Ozkan, H", title: "Trap distribution in TlInS2 layered crystals from thermally stimulated current measurements", journal: "Journal of the Korean Physical Society, 367-373" }
+            // Buraya BibTeX dosyanızdaki diğer tüm girişler otomatik olarak eklenebilir.
         ];
 
         function renderPublications() {
             const container = document.getElementById('publications-container');
             const navContainer = document.getElementById('year-nav-container');
             
-            // Yılları büyükten küçüğe sırala ve benzersiz olanları al
+            // Yılları büyükten küçüğe sırala
             const years = [...new Set(publicationsData.map(p => p.year))].sort((a, b) => b - a);
 
-            // Formül düzeltme: Sayıları otomatik alt indis yapar (örn: In2S3 -> In<sub>2</sub>S<sub>3</sub>)
-            const formatTitle = (text) => text.replace(/([a-zA-Z])(\d+)/g, '$1<sub>$2</sub>');
+            // Kimyasal formülleri (In2S3, GaSe vb.) otomatik alt indis yapar
+            const formatTitle = (text) => {
+                return text.replace(/([a-zA-Z])(\d+)/g, '$1<sub>$2</sub>')
+                           .replace(/([a-zA-Z])(\_)/g, '$1'); // Alt çizgileri temizler
+            };
 
             years.forEach(year => {
-                // Navigasyon butonu ekle
                 navContainer.innerHTML += `<a href="#year-${year}">${year}</a>`;
 
-                // Yıl bölümü oluştur
                 let sectionHTML = `<section id="year-${year}" class="year-section">
                     <div class="year-title">${year}</div>
                     <ul style="list-style:none; padding:0;">`;
 
-                // O yıla ait makaleleri ekle
                 publicationsData.filter(p => p.year === year).forEach(pub => {
                     sectionHTML += `
                         <li class="pub-item">
@@ -323,73 +102,6 @@
         }
 
         window.onload = renderPublications;
-    <script>
-  // ... senin publicationsData burada duruyor ...
-
-  function renderPublications(data) {
-    const yearNav = document.getElementById("year-nav-container");
-    const container = document.getElementById("publications-container");
-
-    if (!yearNav || !container) return;
-
-    // Temizle
-    yearNav.innerHTML = "";
-    container.innerHTML = "";
-
-    if (!Array.isArray(data) || data.length === 0) {
-      container.innerHTML = "<p>Yayın bulunamadı.</p>";
-      return;
-    }
-
-    // Yılları çıkar ve büyükten küçüğe sırala
-    const years = [...new Set(data.map(p => p.year))].sort((a, b) => b - a);
-
-    // Yıl navigasyonu
-    years.forEach(y => {
-      const a = document.createElement("a");
-      a.href = `#year-${y}`;
-      a.textContent = y;
-      yearNav.appendChild(a);
-    });
-
-    // Yıla göre grupla ve bas
-    years.forEach(y => {
-      const section = document.createElement("section");
-      section.className = "year-section";
-      section.id = `year-${y}`;
-
-      const title = document.createElement("div");
-      title.className = "year-title";
-      title.textContent = y;
-
-      section.appendChild(title);
-
-      const pubs = data
-        .filter(p => p.year === y)
-        .map(p => {
-          const authors = p.authors ?? "";
-          const pubTitle = p.title ?? "";
-          const journal = p.journal ?? "";
-          return `
-            <div class="pub-item">
-              <div class="authors">${authors}</div>
-              <div class="title">${pubTitle}</div>
-              <div class="journal">${journal}</div>
-            </div>
-          `;
-        })
-        .join("");
-
-      section.insertAdjacentHTML("beforeend", pubs);
-      container.appendChild(section);
-    });
-  }
-
-  // Sayfa yüklenince çalıştır
-  document.addEventListener("DOMContentLoaded", () => {
-    renderPublications(publicationsData);
-  });
-</script>
     </script>
 </body>
 </html>
