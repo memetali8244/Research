@@ -323,6 +323,73 @@
         }
 
         window.onload = renderPublications;
+    <script>
+  // ... senin publicationsData burada duruyor ...
+
+  function renderPublications(data) {
+    const yearNav = document.getElementById("year-nav-container");
+    const container = document.getElementById("publications-container");
+
+    if (!yearNav || !container) return;
+
+    // Temizle
+    yearNav.innerHTML = "";
+    container.innerHTML = "";
+
+    if (!Array.isArray(data) || data.length === 0) {
+      container.innerHTML = "<p>Yayın bulunamadı.</p>";
+      return;
+    }
+
+    // Yılları çıkar ve büyükten küçüğe sırala
+    const years = [...new Set(data.map(p => p.year))].sort((a, b) => b - a);
+
+    // Yıl navigasyonu
+    years.forEach(y => {
+      const a = document.createElement("a");
+      a.href = `#year-${y}`;
+      a.textContent = y;
+      yearNav.appendChild(a);
+    });
+
+    // Yıla göre grupla ve bas
+    years.forEach(y => {
+      const section = document.createElement("section");
+      section.className = "year-section";
+      section.id = `year-${y}`;
+
+      const title = document.createElement("div");
+      title.className = "year-title";
+      title.textContent = y;
+
+      section.appendChild(title);
+
+      const pubs = data
+        .filter(p => p.year === y)
+        .map(p => {
+          const authors = p.authors ?? "";
+          const pubTitle = p.title ?? "";
+          const journal = p.journal ?? "";
+          return `
+            <div class="pub-item">
+              <div class="authors">${authors}</div>
+              <div class="title">${pubTitle}</div>
+              <div class="journal">${journal}</div>
+            </div>
+          `;
+        })
+        .join("");
+
+      section.insertAdjacentHTML("beforeend", pubs);
+      container.appendChild(section);
+    });
+  }
+
+  // Sayfa yüklenince çalıştır
+  document.addEventListener("DOMContentLoaded", () => {
+    renderPublications(publicationsData);
+  });
+</script>
     </script>
 </body>
 </html>
