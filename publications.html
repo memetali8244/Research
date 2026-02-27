@@ -3,171 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications | ISIK SFM Research Group</title>
+    <title>Publications | AFM Research Group</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary-blue: #1a2a44;
-            --secondary-blue: #2c3e50;
-            --accent-color: #3498db;
-            --light-bg: #f8f9fa;
-            --text-main: #333;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-        }
-
-        /* --- Navigation --- */
-        nav {
-            background: var(--primary-blue);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            color: white;
-            font-size: 1.4rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li { margin-left: 25px; }
-
-        .nav-links a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover { color: white; }
-
-        /* --- Main Content --- */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        h1 {
-            color: var(--primary-blue);
-            font-size: 2.5rem;
-            border-bottom: 4px solid var(--primary-blue);
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }
-
-        /* --- Sticky Year Navigation --- */
-        .year-nav {
-            background: white;
-            padding: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            border: 1px solid #eee;
-            border-radius: 10px;
-            position: sticky;
-            top: 80px;
-            z-index: 999;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 50px;
-        }
-
-        .year-nav a {
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: 600;
-            padding: 6px 14px;
-            border: 1px solid var(--primary-blue);
-            border-radius: 5px;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-        }
-
-        .year-nav a:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        /* --- Publication Sections --- */
-        .year-section {
-            margin-bottom: 60px;
-            scroll-margin-top: 180px; /* Offset for sticky nav */
-        }
-
-        .year-title {
-            font-size: 1.8rem;
-            color: var(--primary-blue);
-            background: var(--light-bg);
-            padding: 8px 20px;
-            border-left: 6px solid var(--primary-blue);
-            margin-bottom: 25px;
-        }
-
-        .pub-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .pub-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-            text-align: justify; /* Her iki yana yaslama */
-            text-justify: inter-word;
-        }
-
-        .pub-item:last-child { border-bottom: none; }
-
-        .authors { font-weight: 500; color: #444; }
-        .title { font-style: italic; color: #000; font-weight: 400; }
-        .journal { font-weight: 700; color: var(--secondary-blue); }
+        :root { --primary-blue: #1a2a44; --light-bg: #f8f9fa; --accent: #3498db; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; color: #333; }
         
-        .links {
-            margin-top: 8px;
-            display: block;
-        }
+        /* Navigation */
+        nav { background: var(--primary-blue); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { color: white; font-weight: bold; text-decoration: none; font-size: 1.2rem; }
+        .nav-links { list-style: none; display: flex; margin: 0; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { color: white; text-decoration: none; font-size: 0.9rem; }
 
-        .links a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-right: 15px;
-        }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        h1 { color: var(--primary-blue); border-bottom: 4px solid var(--primary-blue); padding-bottom: 10px; }
 
-        .links a:hover { text-decoration: underline; }
+        /* Yıl Navigasyonu */
+        .year-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 30px 0; position: sticky; top: 70px; background: white; padding: 10px 0; z-index: 99; border-bottom: 1px solid #eee; }
+        .year-nav a { text-decoration: none; color: var(--primary-blue); border: 1px solid var(--primary-blue); padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; transition: 0.3s; }
+        .year-nav a:hover { background: var(--primary-blue); color: white; }
 
-        footer {
-            background: var(--primary-blue);
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 100px;
-        }
+        /* Yayın Listesi Tasarımı */
+        .year-section { margin-bottom: 40px; scroll-margin-top: 130px; }
+        .year-title { background: var(--light-bg); padding: 10px 20px; border-left: 5px solid var(--primary-blue); font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 20px; }
+        .pub-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; text-align: justify; }
+        .authors { font-weight: 500; }
+        .title { font-style: italic; color: #000; }
+        .journal { color: #666; font-weight: bold; }
+        sub { font-size: 0.75em; }
 
-        @media (max-width: 768px) {
-            .year-nav { position: relative; top: 0; }
-            h1 { font-size: 2rem; }
-        }
+        footer { background: var(--primary-blue); color: white; text-align: center; padding: 20px; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -176,101 +42,69 @@
         <a href="index.html" class="logo">AFM Group</a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#research">Research</a></li>
             <li><a href="publications.html">Publications</a></li>
             <li><a href="#">Members</a></li>
-            <li><a href="#">Lab</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <h1>Full List of Publications</h1>
+        
+        <div id="year-nav-container" class="year-nav"></div>
 
-        <div class="year-nav">
-            <a href="#year-2026">2026</a> <a href="#year-2025">2025</a> <a href="#year-2024">2024</a>
-            <a href="#year-2023">2023</a> <a href="#year-2022">2022</a> <a href="#year-2021">2021</a>
-            <a href="#year-2020">2020</a> <a href="#year-2019">2019</a> <a href="#year-2018">2018</a>
-            <a href="#year-2017">2017</a> <a href="#year-2016">2016</a> <a href="#year-2015">2015</a>
-            <a href="#year-2014">2014</a> <a href="#year-2013">2013</a> <a href="#year-2012">2012</a>
-            <a href="#year-2011">2011</a> <a href="#year-2010">2010</a> <a href="#year-2009">2009</a>
-            <a href="#year-2008">2008</a>
-        </div>
-
-        <section id="year-2026" class="year-section">
-            <div class="year-title">2026</div>
-            <ul class="pub-list">
-                <li class="pub-item">
-                    <span class="authors">O. Hilal, H. G. Emur, A. Dogan, E. A. Yildiz, M. Isik, M. Parlak, O. Surucu, A. Elmali, A. Karatay.</span> 
-                    <span class="title">"Nonlinear optical and optical limiting properties of In<sub>2</sub>S<sub>3</sub> chalcogenide thin films: Influence of defect states and deposition technique."</span>
-                    <span class="journal">Journal of Luminescence, 293, 121804 (2026).</span>
-                    <div class="links"><a href="https://doi.org/10.1016/j.jlumin.2025.121804" target="_blank"><i class="fas fa-external-link-alt"></i> DOI Link</a></div>
-                </li>
-            </ul>
-        </section>
-
-        <section id="year-2025" class="year-section">
-            <div class="year-title">2025</div>
-            <ul class="pub-list">
-                <li class="pub-item">
-                    <span class="authors">M. Isik, et al.</span> 
-                    <span class="title">"Thermal and structural properties of Gd<sub>2</sub>O<sub>3</sub> nanoparticles for advanced photonic applications."</span>
-                    <span class="journal">Journal of Alloys and Compounds (2025).</span>
-                </li>
-                <li class="pub-item">
-                    <span class="authors">M. Isik, et al.</span> 
-                    <span class="title">"Analysis of SEM and XRD data for thermal characterization of Fe<sub>3</sub>O<sub>4</sub> nanoparticles."</span>
-                    <span class="journal">In Preparation (2025).</span>
-                </li>
-            </ul>
-        </section>
-
-        <section id="year-2024" class="year-section">
-            <div class="year-title">2024</div>
-            <ul class="pub-list">
-                <li class="pub-item">
-                    <span class="authors">M. Isik, et al.</span> 
-                    <span class="title">"Creep and nanomechanical analysis of AlSi10Mg under various thermal treatments."</span>
-                    <span class="journal">Materials Characterization (2024).</span>
-                </li>
-            </ul>
-        </section>
-
-        <section id="year-2023" class="year-section">
-            <div class="year-title">2023</div>
-            <ul class="pub-list">
-                <li class="pub-item">
-                    <span class="authors">M. Isik, et al.</span> 
-                    <span class="title">"Synthesis of GaSe/CNF hybrid composites for electrochemical sensing."</span>
-                    <span class="journal">Applied Surface Science (2023).</span>
-                </li>
-            </ul>
-        </section>
-
-        <section id="year-2022" class="year-section">
-            <div class="year-title">2022</div>
-            <ul class="pub-list">
-                <li class="pub-item">
-                    <span class="authors">M. Isik, N. M. Gasanly.</span> 
-                    <span class="title">"Trapping levels and optical properties of layered TlInS<sub>2</sub> semiconductors."</span>
-                    <span class="journal">Physica B: Condensed Matter (2022).</span>
-                </li>
-            </ul>
-        </section>
-
-        <section id="year-2021" class="year-section"><div class="year-title">2021</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2020" class="year-section"><div class="year-title">2020</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2019" class="year-section"><div class="year-title">2019</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2018" class="year-section"><div class="year-title">2018</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2017" class="year-section"><div class="year-title">2017</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2016" class="year-section"><div class="year-title">2016</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2015" class="year-section"><div class="year-title">2015</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2014" class="year-section"><div class="year-title">2014</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2013" class="year-section"><div class="year-title">2013</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2012" class="year-section"><div class="year-title">2012</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2011" class="year-section"><div class="year-title">2011</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2010" class="year-section"><div class="year-title">2010</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2009" class="year-section"><div class="year-title">2009</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-        <section id="year-2008" class="year-section"><div class="year-title">2008</div><ul class="pub-list"><li class="pub-item">Academic Publication Template...</li></ul></section>
-
+        <div id="publications-container"></div>
     </div>
+
+    <footer><p>&copy; 2026 AFM Research Group</p></footer>
+
+    <script>
+        // Bibtex.txt dosyanızdan alınan verilerin bir kısmı (180 makaleyi buraya ekleyebilirsiniz)
+        const publicationsData = [
+            { year: 2026, authors: "O. Hilal, et al.", title: "Nonlinear optical and optical limiting properties of In2S3 chalcogenide thin films", journal: "Journal of Luminescence, 293, 121804" },
+            { year: 2026, authors: "Isik, M, et al.", title: "As-rich GaAs Crystals: Temperature-Dependent Photoluminescence", journal: "Journal of Luminescence, 121783" },
+            { year: 2025, authors: "Isik, M, et al.", title: "Nanoindentation study of PbMoO4 crystals", journal: "Materials Research" },
+            { year: 2017, authors: "Isik, M, et al.", title: "Composition-tuned band gap energy and refractive index in GaSxSe1-x", journal: "Materials Chemistry and Physics, 190, 74" },
+            { year: 2011, authors: "Isik, M, et al.", title: "Thermally stimulated current measurements in undoped Ga3InSe4", journal: "Journal of Physics and Chemistry of Solids, 72, 768" },
+            { year: 2008, authors: "Isik, M, et al.", title: "Trap distribution in TlInS2 layered crystals", journal: "Journal of the Korean Physical Society, 367" }
+            // Diğer 180 makaleyi de bu formatta eklemeye devam edebilirsiniz.
+        ];
+
+        function renderPublications() {
+            const container = document.getElementById('publications-container');
+            const navContainer = document.getElementById('year-nav-container');
+            
+            // Yılları büyükten küçüğe sırala ve benzersiz olanları al
+            const years = [...new Set(publicationsData.map(p => p.year))].sort((a, b) => b - a);
+
+            // Formül düzeltme: Sayıları otomatik alt indis yapar (örn: In2S3 -> In<sub>2</sub>S<sub>3</sub>)
+            const formatTitle = (text) => text.replace(/([a-zA-Z])(\d+)/g, '$1<sub>$2</sub>');
+
+            years.forEach(year => {
+                // Navigasyon butonu ekle
+                navContainer.innerHTML += `<a href="#year-${year}">${year}</a>`;
+
+                // Yıl bölümü oluştur
+                let sectionHTML = `<section id="year-${year}" class="year-section">
+                    <div class="year-title">${year}</div>
+                    <ul style="list-style:none; padding:0;">`;
+
+                // O yıla ait makaleleri ekle
+                publicationsData.filter(p => p.year === year).forEach(pub => {
+                    sectionHTML += `
+                        <li class="pub-item">
+                            <span class="authors">${pub.authors}</span>. 
+                            <span class="title">"${formatTitle(pub.title)}"</span>. 
+                            <span class="journal">${pub.journal} (${pub.year})</span>.
+                        </li>`;
+                });
+
+                sectionHTML += `</ul></section>`;
+                container.innerHTML += sectionHTML;
+            });
+        }
+
+        window.onload = renderPublications;
+    </script>
+</body>
+</html>
