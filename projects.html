@@ -1,152 +1,156 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<style>
-    /* Proje Tablosu Genel Stilleri */
-    .projects-container {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 20px auto;
-        max-width: 1200px;
-        padding: 0 15px;
-    }
-
-    .projects-title {
-        color: #004a99;
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        border-bottom: 2px solid #004a99;
-        padding-bottom: 10px;
-    }
-
-    .project-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    /* Başlık Rengi */
-    .project-table thead tr {
-        background-color: #5c6bc0; /* Örnekteki mavi-mor tonu */
-        color: #ffffff;
-        text-align: left;
-    }
-
-    .project-table th, .project-table td {
-        padding: 15px;
-        border: 1px solid #e0e0e0;
-        line-height: 1.5;
-    }
-
-    /* Satır Renklendirmesi (Zebra Style) */
-    .project-table tbody tr:nth-child(even) {
-        background-color: #f8f9fa;
-    }
-
-    .project-table tbody tr:hover {
-        background-color: #f1f4ff;
-        transition: 0.3s;
-    }
-
-    .institution-cell {
-        font-weight: bold;
-        color: #333;
-        width: 15%;
-    }
-
-    .title-cell {
-        width: 45%;
-    }
-
-    .date-cell {
-        width: 10%;
-        white-space: nowrap;
-        text-align: center;
-    }
-
-    .investigator-cell {
-        width: 20%;
-    }
-
-    /* Kimyasal formüller için alt indis ayarı */
-    sub {
-        font-size: 75%;
-    }
-
-    /* Mobil Uyumluluk */
-    @media (max-width: 768px) {
-        .project-table, .project-table thead, .project-table tbody, .project-table th, .project-table td, .project-table tr {
-            display: block;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - ISIK SFM Research Group</title>
+    <style>
+        /* Genel Sayfa Yapısı */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
         }
-        .project-table thead { display: none; }
-        .project-table tr { margin-bottom: 15px; }
-        .project-table td {
-            text-align: right;
-            padding-left: 50%;
-            position: relative;
+
+        /* Üst Siyah/Mavi Navigasyon Çubuğu (image_f61720.png'ye göre) */
+        .navbar {
+            background-color: #1a2a3a; /* Koyu mavi/siyah tonu */
+            color: white;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .project-table td::before {
-            content: attr(data-label);
-            position: absolute;
-            left: 15px;
+
+        .navbar .brand {
+            font-size: 20px;
             font-weight: bold;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        .navbar .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Projeler İçerik Alanı */
+        .projects-container {
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .projects-title {
+            color: #004a99;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #004a99;
+            padding-bottom: 10px;
+        }
+
+        /* Proje Tablosu Stilleri */
+        .project-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-table thead tr {
+            background-color: #5c6bc0; /* Örnekteki mavi-mor tonu */
+            color: #ffffff;
             text-align: left;
         }
-    }
-</style>
+
+        .project-table th, .project-table td {
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .project-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Hücre Genişlikleri */
+        .inst-col { width: 15%; font-weight: bold; }
+        .title-col { width: 50%; }
+        .date-col { width: 15%; text-align: center; }
+        .name-col { width: 20%; }
+
+        /* Kimyasal Alt İndisler */
+        sub { font-size: 75%; }
+    </style>
 </head>
 <body>
 
-<div class="projects-container">
-    <h2 class="projects-title">Projeler</h2>
-    
-    <table class="project-table">
-        <thead>
-            <tr>
-                <th>Kurum</th>
-                <th>Proje Adı / No</th>
-                <th>Başlangıç</th>
-                <th>Bitiş</th>
-                <th>Yürütücü</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="institution-cell" data-label="Kurum">TÜBİTAK (ARDEB 1002)</td>
-                <td class="title-cell" data-label="Proje Adı">
-                    NaBi(WO<sub>4</sub>)<sub>2</sub> ve NaBi(MoO<sub>4</sub>)<sub>2</sub> Kristallerinin Nanoindentasyon Analizi: Yük Bağımlı Mekanik Davranış ve Yapısal Etkiler <br>
-                    <small><strong>No:</strong> 125F317</small>
-                </td>
-                <td class="date-cell" data-label="Başlangıç">Kasım 2025</td>
-                <td class="date-cell" data-label="Bitiş">Kasım 2026</td>
-                <td class="investigator-cell" data-label="Yürütücü">Mehmet IŞIK</td>
-            </tr>
+    <div class="navbar">
+        <div class="brand">ISIK SFM Research Group</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="members.html">Members</a>
+            <a href="publications.html">Publications</a>
+            <a href="projects.html" style="font-weight:bold; color:#ffcc00;">Projects</a>
+            <a href="lab.html">Lab</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
 
-            <tr>
-                <td class="institution-cell" data-label="Kurum">TÜBİTAK (ARDEB 3001)</td>
-                <td class="title-cell" data-label="Proje Adı">
-                    Nadir Toprak Elementi (Gd, Yb, Er) Katkılı ZnO Nanokristallerinin Sentezlenmesi ve Düşük Sıcaklık Termolüminesans Özelliklerinin İncelenmesi <br>
-                    <small><strong>No:</strong> 116F304</small>
-                </td>
-                <td class="date-cell" data-label="Başlangıç">Mart 2017</td>
-                <td class="date-cell" data-label="Bitiş">Mart 2019</td>
-                <td class="investigator-cell" data-label="Yürütücü">Mehmet IŞIK</td>
-            </tr>
-
-            <tr>
-                <td class="institution-cell" data-label="Kurum">ATILIM UNIVERSITY (ADP)</td>
-                <td class="title-cell" data-label="Proje Adı">
-                    Bi<sub>12</sub>SiO<sub>20</sub> ve Bi<sub>12</sub>Ge<sub>20</sub> fotorefraktif kristallerinin optiksel, elektriksel ve mekaniksel karakterizasyonlarının deneysel ve teorik yöntemler ile incelenmesi <br>
-                    <small><strong>No:</strong> ATÜ-ADP-1920-03</small>
-                </td>
-                <td class="date-cell" data-label="Başlangıç">Aralık 2019</td>
-                <td class="date-cell" data-label="Bitiş">Aralık 2020</td>
-                <td class="investigator-cell" data-label="Yürütücü">Mehmet IŞIK</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="projects-container">
+        <h2 class="projects-title">Projects</h2>
+        
+        <table class="project-table">
+            <thead>
+                <tr>
+                    <th>Funded By</th>
+                    <th>Projects Title / No</th>
+                    <th>Start</th>
+                    <th>Finish</th>
+                    <th>Project Investigator</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="inst-col">TÜBİTAK (ARDEB 1002)</td>
+                    <td class="title-col">
+                        NaBi(WO<sub>4</sub>)<sub>2</sub> ve NaBi(MoO<sub>4</sub>)<sub>2</sub> Kristallerinin Nanoindentasyon Analizi: Yük Bağımlı Mekanik Davranış ve Yapısal Etkiler <br>
+                        <strong>No:</strong> 125F317
+                    </td>
+                    <td class="date-col">November 2025</td>
+                    <td class="date-col">November 2026</td>
+                    <td class="name-col">Mehmet IŞIK</td>
+                </tr>
+                <tr>
+                    <td class="inst-col">TÜBİTAK (ARDEB 3001)</td>
+                    <td class="title-col">
+                        Nadir Toprak Elementi (Gd, Yb, Er) Katkılı ZnO Nanokristallerinin Sentezlenmesi ve Düşük Sıcaklık Termolüminesans Özelliklerinin İncelenmesi <br>
+                        <strong>No:</strong> 116F304
+                    </td>
+                    <td class="date-col">Mart 2017</td>
+                    <td class="date-col">Mart 2019</td>
+                    <td class="name-col">Mehmet IŞIK</td>
+                </tr>
+                <tr>
+                    <td class="inst-col">ATILIM UNIVERSITY (ADP)</td>
+                    <td class="title-col">
+                        Bi<sub>12</sub>SiO<sub>20</sub> ve Bi<sub>12</sub>Ge<sub>20</sub> fotorefraktif kristallerinin optiksel, elektriksel ve mekaniksel karakterizasyonlarının deneysel ve teorik yöntemler ile incelenmesi <br>
+                        <strong>No:</strong> ATÜ-ADP-1920-03
+                    </td>
+                    <td class="date-col">Aralık 2019</td>
+                    <td class="date-col">Aralık 2020</td>
+                    <td class="name-col">Mehmet IŞIK</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
