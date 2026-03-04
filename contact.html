@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ISIK SFM Research Group</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigasyon Çubuğu - Standart */
+        .navbar {
+            background-color: #1a2a3a; 
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .brand { font-size: 1.25rem; font-weight: bold; }
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Ana Konteyner - Publications/Projects ile aynı genişlik */
+        .main-content {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Başlık Formatı - Standart */
+        .page-header {
+            border-bottom: 4px solid #1a2a3a;
+            margin-bottom: 40px;
+            padding-bottom: 10px;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            color: #1a2a3a;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* İletişim Düzeni: İki Sütun */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            color: #1a2a3a;
+            margin-top: 0;
+            border-left: 5px solid #ffcc00;
+            padding-left: 15px;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #004a99;
+            font-size: 1.1rem;
+        }
+
+        /* Harita Alanı */
+        .map-container {
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: 400px;
+            background-color: #f9f9f9;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .navbar { flex-direction: column; text-align: center; }
+            .navbar .nav-links { margin-top: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="brand">ISIK SFM Research Group</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="members.html">Members</a>
+            <a href="publications.html">Publications</a>
+            <a href="projects.html">Projects</a>
+            <a href="lab.html">Lab</a>
+            <a href="contact.html" style="border-bottom: 2px solid #ffcc00;">Contact</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="page-header">
+            <h1 class="page-title">Contact Us</h1>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>Address</h3>
+                    <p>
+                        İzmir Bakırçay Üniversitesi<br>
+                        Fen-Edebiyat Fakültesi, Fizik Bölümü<br>
+                        Seyrek, Menemen, İzmir, Türkiye
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p>
+                        <strong>Prof. Dr. Mehmet IŞIK</strong>
+                        <a href="mailto:mehmet.isik@bakircay.edu.tr" style="color: #333; text-decoration: none;">mehmet.isik@bakircay.edu.tr</a>
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Profiles</h3>
+                    <p>
+                        <a href="#" style="color: #004a99; text-decoration: none; font-weight: bold;">Google Scholar</a> | 
+                        <a href="#" style="color: #004a99; text-decoration: none; font-weight: bold;">ResearchGate</a> |
+                        <a href="#" style="color: #004a99; text-decoration: none; font-weight: bold;">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3119.3444002624456!2d26.98595567657924!3d38.57193437172776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbdf6463999999%3A0x6b4845479901e355!2s%C4%B0zmir%20Bak%C4%B1r%C3%A7ay%20%C3%9cniversitesi!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
